@@ -8,9 +8,9 @@ public class DBconnection {
 	
 	public static Connection Conn() throws Exception {
 		try{
-	        String URL = "jdbc:mysql://localhost:3306/bookdb";
+	        String URL = "jdbc:mysql://localhost:3306/fmsdb";
 	        Class.forName("com.mysql.jdbc.Driver");
-	        conn = DriverManager.getConnection(URL, "root", "");
+	        conn = DriverManager.getConnection(URL, "root", "wxf201314");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
