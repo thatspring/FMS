@@ -4,7 +4,7 @@
 <package name="default" extends="struts-default">
 
   <action name="userLogin" class="com.fms.User.UserAction" method="LoginUser">
-    <result name="success">/index.jsp</result>
+    <result name="success">/homepage.jsp</result>
     <result name="error">/login.jsp</result>
   </action>
   
@@ -12,6 +12,12 @@
     <result name="success">/index.jsp</result>
     <result name="error">/register.jsp</result>
   </action>
+  
+  <action name="userEdit" class="com.fms.User.UserAction" method="RegisterUser">
+    <result name="success">/index.jsp</result>
+    <result name="error">/register.jsp</result>
+  </action>
+  
   
 </package>
 </struts>    

@@ -6,18 +6,12 @@ import com.fms.DBaction.UserOperateDB;
 
 public class UserAction {
     private UserClass user;
-
-	public UserClass getUser() {
-		return user;
-	}
-
-	public void setUser(UserClass user) throws Exception {
-        this.user = user;
-	}
+    private UserClass ruser;
     
 	public String LoginUser() throws Exception{
 		UserOperateDB uod=new UserOperateDB();
-		if(uod.CheckUser(user)){
+		ruser = uod.CheckUser(user);
+		if(ruser.getUserPass().equals(user.getUserPass())){
 			return "success";
 		}else{
 			return "error";
@@ -27,9 +21,25 @@ public class UserAction {
 	public String RegisterUser() throws Exception{
 		UserOperateDB uod=new UserOperateDB();
 		if(uod.AddUser(user)){
+			System.out.println(user.getUserId());
 			return "success";
 		}else{
 			return "error";
 		}
 	}
+	
+	public UserClass getUser() {
+		return user;
+	}
+	public void setUser(UserClass user){
+        this.user = user;
+	}
+
+	public UserClass getRuser() {
+		return ruser;
+	}
+	public void setRuser(UserClass ruser) {
+		this.ruser = ruser;
+	}
+	
 }

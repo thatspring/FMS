@@ -76,28 +76,28 @@ public class UserOperateDB extends DBconnection {
         return result;
     }
     
-    public boolean CheckUser(UserClass user) throws Exception{
-    	boolean result=false;
+    public UserClass CheckUser(UserClass user) throws Exception{
+    	UserClass r_user = new UserClass();
     	Connection conn = null;
 		PreparedStatement st = null;
 		ResultSet rs = null;
         try{
         	conn=DBconnection.Conn();
-        	String sql="select userPass from userp where userName=?";
+        	String sql="select * from userp where userName=?";
             st = conn.prepareStatement(sql);
             st.setString(1, user.getUserName());
             rs=st.executeQuery();
             if(rs.next()){
-            	if(rs.getString("userPass").equals(user.getUserPass())){
-            		result = true;
-            	}
+            	r_user.setUserName(rs.getString("userName"));
+            	r_user.setUserId(rs.getInt("userId"));
+            	r_user.setUserPass(rs.getString("userPass"));
             }
             st.close();
             conn.close();
         }catch(SQLException e){
             e.printStackTrace();
         }
-    	return result;
+    	return r_user;
     }
 
 }

@@ -9,6 +9,7 @@ public class UserClass {
   private String userIphone;
   private String userEmail;
   private String userName;
+  private int    userId;
   private String userPass;
   
   public String getUserNumber() {
@@ -65,6 +66,13 @@ public class UserClass {
   }
   public void setUserName(String userName) {
 	this.userName = userName;
+  }
+  
+  public int getUserId() {
+	return userId;
+  }
+  public void setUserId(int userId) {
+	this.userId = userId;
   }
   
   public String getUserPass() {
