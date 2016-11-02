@@ -5,6 +5,7 @@ import com.fms.DBaction.UserOperateDB;
 
 
 public class UserAction {
+	private int userId;
     private UserClass user;
     private UserClass ruser;
     
@@ -21,13 +22,61 @@ public class UserAction {
 	public String RegisterUser() throws Exception{
 		UserOperateDB uod=new UserOperateDB();
 		if(uod.AddUser(user)){
-			System.out.println(user.getUserId());
 			return "success";
 		}else{
 			return "error";
 		}
 	}
 	
+	public String GetUserI() throws Exception{
+		UserOperateDB uod = new UserOperateDB();
+		ruser = uod.QueryUserI(userId);
+		if(ruser!=null){
+			return "success";
+		}else{
+			return "error";
+		}
+	}
+	
+	public String GetUserP() throws Exception{
+		UserOperateDB uod = new UserOperateDB();
+		ruser = uod.QueryUserP(userId);
+		if(ruser!=null){
+			return "success";
+		}else{
+			return "error";
+		}
+	}
+	
+	public String ChangeUserI() throws Exception{
+		UserOperateDB uod = new UserOperateDB();
+		userId=uod.UpdateUserI(ruser);
+		ruser = uod.QueryUserI(userId);
+		if(userId!=0){
+			return "success";
+		}else{
+			return "error";
+		}
+	}
+	
+	public String ChangeUserP() throws Exception{
+		UserOperateDB uod = new UserOperateDB();
+		userId=uod.UpdateUserP(ruser);
+		ruser = uod.QueryUserI(userId);
+		if(userId!=0){
+			return "success";
+		}else{
+			return "error";
+		}
+	}
+	
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	public UserClass getUser() {
 		return user;
 	}

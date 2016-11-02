@@ -99,5 +99,107 @@ public class UserOperateDB extends DBconnection {
         }
     	return r_user;
     }
+    
+    public UserClass QueryUserI(int userId) throws Exception{
+    	UserClass r_user = new UserClass();
+    	Connection conn = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="select * from useri where userId=?";
+            st = conn.prepareStatement(sql);
+            st.setInt(1, userId);
+            rs=st.executeQuery();
+            if(rs.next()){
+            	r_user.setUserId(userId);
+            	r_user.setUserNumber(rs.getString("userNumber"));
+            	r_user.setUserTruename(rs.getString("userTruename"));
+            	r_user.setUserDepartment(rs.getString("userDepartment"));
+            	r_user.setUserPost(rs.getString("userPost"));
+            	r_user.setUserPhone(rs.getString("userPhone"));
+            	r_user.setUserIphone(rs.getString("userIphone"));
+            	r_user.setUserEmail(rs.getString("userEmail"));
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    	return r_user;
+    }
 
+	public UserClass QueryUserP(int userId) throws Exception{
+		UserClass r_user = new UserClass();
+    	Connection conn = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="select * from userp where userId=?";
+            st = conn.prepareStatement(sql);
+            st.setInt(1, userId);
+            rs=st.executeQuery();
+            if(rs.next()){
+            	r_user.setUserName(rs.getString("userName"));
+            	r_user.setUserId(userId);
+            	r_user.setUserPass(rs.getString("userPass"));
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+		return r_user;
+	}
+
+    public int UpdateUserP(UserClass user) throws Exception{
+    	int r_userId = 0;
+    	Connection conn = null;
+		PreparedStatement st = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="update userp set userPass=? where userId=?";
+            st = conn.prepareStatement(sql);
+            st.setString(1, user.getUserPass());
+            st.setInt(2, user.getUserId());
+            int num=st.executeUpdate();
+            if(num>0){
+            	r_userId=user.getUserId();
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    	return r_userId;
+    }
+    
+    public int UpdateUserI(UserClass user) throws Exception{
+    	int r_userId = 0;
+    	Connection conn = null;
+		PreparedStatement st = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="update useri set userTruename=?,userDepartment=?,";
+        	sql+="userPost=?,userPhone=?,userIphone=?,userEmail=? where userId=?";
+            st = conn.prepareStatement(sql);
+            st.setString(1, user.getUserTruename());
+            st.setString(2, user.getUserDepartment());
+            st.setString(3, user.getUserPost());
+            st.setString(4, user.getUserPhone());
+            st.setString(5, user.getUserIphone());
+            st.setString(6, user.getUserEmail());
+            st.setInt(7, user.getUserId());
+            int num=st.executeUpdate();
+            if(num>0){
+            	r_userId=user.getUserId();
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    	return r_userId;
+    }
 }

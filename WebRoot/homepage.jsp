@@ -26,6 +26,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <h3>你好！<s:property value="ruser.userName"/>欢迎登陆
     <a href="login.jsp">退出登录</a></h3>
     <a href="userPlay.action?userId=<s:property value="ruser.userId"/>">查看个人信息</a>
-  
   </body>
 </html>
