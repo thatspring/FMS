@@ -42,6 +42,33 @@
     <result name="success">/homepage.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
+
+
+
+  <action name="userAccount" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/accounting.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
   
+  <action name="accountJmpA" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/addaccount.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="accountAdd" class="com.fms.Account.AccountAction" method="AddAccount">
+    <result name="success">/accounting.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="accountQuery" class="com.fms.Account.AccountAction" method="QueryAccount">
+    <result name="success">/listaccount.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="accountDelete" class="com.fms.Account.AccountAction" method="DeleteAccount">
+    <result name="success">/accounting.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+
 </package>
 </struts>    

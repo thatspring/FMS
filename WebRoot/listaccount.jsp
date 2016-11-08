@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'homepage.jsp' starting page</title>
+    <title>My JSP 'listaccount.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,14 +23,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <h3>你好！<s:property value="ruser.userName"/>欢迎登陆
-    <a href="login.jsp">退出登录</a></h3>
-    <a href="userPlay.action?userId=<s:property value="ruser.userId"/>">查看个人信息</a><br>
-    <a href="userAccount.action?userId=<s:property value="ruser.userId"/>"">记账功能</a><br>
-    <a href="">流水功能</a><br>
-    <a href="">发票编辑</a><br>
-    <a href="">报表编辑</a><br>
-    <a href="">税率计算</a><br>
-    <a href="">工资发放</a><br>
+  <h3>你好！<s:property value="ruser.userName"/></h3>
+   <table>
+    <tr>
+     <th>项目</th><th>金额</th><th>类型</th><th>日期</th><th>操作</th>
+    </tr>
+    <s:iterator id="i" value="alist">
+    <tr>
+     <td><s:property value="#i.accountProject"/></td>
+     <td>￥<s:property value="#i.accountMoney"/></td>
+     <td><s:property value="#i.accountType"/></td>
+     <td><s:property value="#i.accountDate"/></td>
+     <td><a href="accountDelete.action?accountId=<s:property value="#i.accountId"/>
+     &userId=<s:property value="ruser.userId"/>">删除</a></td>
+    </tr>
+    </s:iterator>
+   </table>
+   <a href="userAccount.action?userId=<s:property value="ruser.userId"/>">返回</a><br>
   </body>
 </html>
