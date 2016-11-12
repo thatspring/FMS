@@ -70,5 +70,53 @@
     <result name="error">/error.jsp</result>
   </action>
 
+
+
+  <action name="userInvoice" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/invoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceJmpI" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/addinvoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceAdd" class="com.fms.Invoice.InvoiceAction" method="AddInvoice">
+    <result name="success">/invoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceQueryByDate" class="com.fms.Invoice.InvoiceAction" method="QueryInvoiceByDate">
+    <result name="success">/listinvoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceDetail" class="com.fms.Invoice.InvoiceAction" method="QueryInvoiceById">
+    <result name="success">/invoicedetail.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceUdetail" class="com.fms.User.UserAction" method="GetUserIByUserNumber">
+    <result name="success">/uinformation.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceUpJAi" class="com.fms.Invoice.InvoiceAction" method="QueryInvoiceById">
+    <result name="success">/updateinvoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceUpdate" class="com.fms.Invoice.InvoiceAction" method="UpdateInvoice">
+    <result name="success">/invoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceDelete" class="com.fms.Invoice.InvoiceAction" method="DeleteInvoice">
+    <result name="success">/invoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  
 </package>
 </struts>    
