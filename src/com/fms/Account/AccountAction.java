@@ -7,6 +7,7 @@ import com.fms.DBaction.UserOperateDB;
 import com.fms.User.UserClass;
 
 import java.util.List;
+import java.text.DecimalFormat;
 
 
 public class AccountAction {
@@ -15,6 +16,7 @@ public class AccountAction {
 	private List<AccountClass> alist;
 	private int userId;
 	private UserClass ruser;
+	private String CMoney;
 	
 	public String AddAccount() throws Exception{
         UserOperateDB auod = new UserOperateDB();
@@ -32,6 +34,8 @@ public class AccountAction {
 	    ruser = auod.QueryUserP(userId);
 		AccountOperateDB aod=new AccountOperateDB();
 		alist=aod.QueryAccount(account);
+		CMoney=CalculationMoney(alist);
+		System.out.println(CMoney);
 		if(alist!=null){
 			return "success";
 		}else{
@@ -83,6 +87,29 @@ public class AccountAction {
 		this.ruser = ruser;
 	}
 	
-	
+	public String getCMoney() {
+		return CMoney;
+	}
+	public void setCMoney(String cMoney) {
+		CMoney = cMoney;
+	}
 
+	private String CalculationMoney(List<AccountClass> list){
+		int i=0;
+		int sum=0;
+		for(i=0;i<list.size();i++){
+			AccountClass ac=list.get(i);
+			String str=ac.getAccountMoney();
+			str=str.replace(",","");
+			int n_str=0;
+			n_str=Integer.valueOf(str).intValue();
+			if(ac.getAccountType().equals("out")){
+				sum=sum-n_str;
+			}else{
+				sum=sum+n_str;
+			}
+		}
+		DecimalFormat usFormat = new DecimalFormat("###,###");  
+		return usFormat.format(sum);
+	}
 }

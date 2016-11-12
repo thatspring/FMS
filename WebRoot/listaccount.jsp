@@ -39,6 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </tr>
     </s:iterator>
    </table>
+   <h3>总计： ￥<s:property value="CMoney"></s:property></h3>
    <a href="userAccount.action?userId=<s:property value="ruser.userId"/>">返回</a><br>
   </body>
 </html>
