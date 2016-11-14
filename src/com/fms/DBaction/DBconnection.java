@@ -10,7 +10,7 @@ public class DBconnection {
 		try{
 	        String URL = "jdbc:mysql://localhost:3306/fmsdb";
 	        Class.forName("com.mysql.jdbc.Driver");
-	        conn = DriverManager.getConnection(URL, "root", "wxf201314");
+	        conn = DriverManager.getConnection(URL, "root", "19960209");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
