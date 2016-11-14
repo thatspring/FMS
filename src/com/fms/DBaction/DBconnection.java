@@ -11,7 +11,6 @@ public class DBconnection {
 	        String URL = "jdbc:mysql://localhost:3306/fmsdb?useSSL=false";
 	        Class.forName("com.mysql.jdbc.Driver");
 	        conn = DriverManager.getConnection(URL, "root", "19960209");
-	        System.out.println("sus!");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
