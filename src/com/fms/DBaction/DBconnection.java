@@ -8,7 +8,7 @@ public class DBconnection {
 	
 	public static Connection Conn() throws Exception {
 		try{
-	        String URL = "jdbc:mysql://localhost:3306/fmsdb?ssl=false";
+	        String URL = "jdbc:mysql://localhost:3306/fmsdb?useSSL=false";
 	        Class.forName("com.mysql.jdbc.Driver");
 	        conn = DriverManager.getConnection(URL, "root", "19960209");
 	        System.out.println("sus!");
