@@ -29,7 +29,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a href="userAccount.action?userId=<s:property value="ruser.userId"/>"">记账功能</a><br>
     <a href="">流水功能</a><br>
     <a href="userInvoice.action?userId=<s:property value="ruser.userId"/>">发票编辑</a><br>
-    <a href="">报表编辑</a><br>
+    <a href="userFstatements.action?userId=<s:property value="ruser.userId"/>">报表编辑</a><br>
     <a href="">税率计算</a><br>
     <a href="">工资发放</a><br>
   </body>

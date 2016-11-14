@@ -26,9 +26,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <body>
      <h2>更改密码</h2>
      <form action="userChangeP">
-     <s:hidden name="ruser.userId" value="%{ruser.userId}"/></span>
+     <s:hidden name="ruser.userId" value="%{ruser.userId}"/>
      <span>密码：<s:textfield name="ruser.userPass" value="%{ruser.userPass}"/></span><br>
-     <s:submit value="修改"/>
+     <input type="submit" value="修改"/>
      </form>
      <a href="userPlay.action?userId=<s:property value="ruser.userId"/>">返回</a>
     </body>
@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <body>
      <h2>更改信息</h2>
      <form action="userChangeI">
-     <s:hidden name="ruser.userId" value="%{ruser.userId}"/></span>
+     <s:hidden name="ruser.userId" value="%{ruser.userId}"/>
      <span>用户代码：<s:property value="%{ruser.userNumber}"/></span><br>
      <span>用户真实姓名：<s:textfield name="ruser.userTruename" value="%{ruser.userTruename}"/></span><br>
      <span>用户所在部门：<s:textfield name="ruser.userDepartment" value="%{ruser.userDepartment}"/></span><br>
@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <span>用户办公电话：<s:textfield name="ruser.userPhone" value="%{ruser.userPhone}"/></span><br>
      <span>用户手机号码：<s:textfield name="ruser.userIphone" value="%{ruser.userIphone}"/></span><br>
      <span>用户电子邮件：<s:textfield name="ruser.userEmail" value="%{ruser.userEmail}"/></span><br>
-     <s:submit value="修改"/>
+     <input type="submit" value="修改"/>
      </form>
      <a href="userPlay.action?userId=<s:property value="ruser.userId"/>">返回</a>
     </body>
