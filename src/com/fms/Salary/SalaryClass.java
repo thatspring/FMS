@@ -14,7 +14,7 @@ public class SalaryClass {
 	public String getEmployeeID() {
 		return employeeID;
 	}
-	public void setEmployeeId(String employeeID) {
+	public void setEmployeeID(String employeeID) {
 		this.employeeID = employeeID;
 	}
 	
