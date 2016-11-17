@@ -21,7 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 
   </head>
-  
   <body>
     <h3>你好！<s:property value="ruser.userName"/></h3>
     <h3>审核人详细信息</h3><br>
@@ -32,7 +31,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <span>用户办公电话：</span><s:property value="user.userPhone"/><br>
     <span>用户手机号码：</span><s:property value="user.userIphone"/><br>
     <span>用户电子邮箱：</span><s:property value="user.userEmail"/><br>
+    <s:if test="%{invoice.invoiceDate!=null}">
     <a href="invoiceQueryByDate.action?invoice.invoiceDate=<s:property value="invoice.invoiceDate"/>
    &userId=<s:property value="ruser.userId"/>">返回</a><br>
+    </s:if>
+    <s:elseif test="%{pstatement.PstatementDate!=null}">
+    <a href="pstatementQuery.action?fsdate=<s:property value="pstatement.PstatementDate"/>
+   &userId=<s:property value="ruser.userId"/>">返回</a><br>
+    </s:elseif>
   </body>
 </html>

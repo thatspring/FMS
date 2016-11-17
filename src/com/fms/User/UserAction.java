@@ -2,17 +2,11 @@ package com.fms.User;
 
 import com.fms.User.UserClass;
 import com.fms.DBaction.UserOperateDB;
-import com.fms.Invoice.InvoiceClass;
-import com.fms.DBaction.InvoiceOperateDB;
-
 
 public class UserAction {
 	private int userId;
     private UserClass user;
     private UserClass ruser;
-    
-    private int invoiceId;
-    private InvoiceClass invoice;
     
 	public String LoginUser() throws Exception{
 		UserOperateDB uod=new UserOperateDB();
@@ -75,20 +69,6 @@ public class UserAction {
 		}
 	}
 	
-	public String GetUserIByUserNumber() throws Exception{
-		UserOperateDB uod = new UserOperateDB();
-		ruser = uod.QueryUserP(userId);
-		InvoiceOperateDB iod = new InvoiceOperateDB();
-		invoice = iod.QueryInvoiceById(invoiceId);
-		UserOperateDB uod1 = new UserOperateDB();
-		user = uod1.QueryUserIByUserNumber(invoice.getInvoiceUnumber());
-		if(ruser!=null){
-			return "success";
-		}else{
-			return "error";
-		}
-	}
-	
 	public int getUserId() {
 		return userId;
 	}
@@ -108,18 +88,5 @@ public class UserAction {
 	}
 	public void setRuser(UserClass ruser) {
 		this.ruser = ruser;
-	}
-
-	public int getInvoiceId() {
-		return invoiceId;
-	}
-	public void setInvoiceId(int invoiceId) {
-		this.invoiceId = invoiceId;
-	}
-	public InvoiceClass getInvoice() {
-		return invoice;
-	}
-	public void setInvoice(InvoiceClass invoice) {
-		this.invoice = invoice;
 	}
 }

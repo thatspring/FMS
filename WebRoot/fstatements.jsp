@@ -24,16 +24,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <h3>你好！<s:property value="ruser.userName"/></h3>
-    <form action="">
+    <form action="statementQuery">
     <s:hidden name="userId" value="%{ruser.userId}"/>
     <span>请输入月份用于查询你当月的财务报表</span><br>
-    <input type="month" name=""/><br>
+    <input type="month" name="fsdate"/><br>
     <span>请输入报表类型</span><br>
-    <input type="text" list="pasta" name=""/>
+    <input type="text" list="pasta" name="fstype"/>
       <datalist id="pasta">
-       <option>资产负债表</option>
-       <option>利润表</option>
-       <option>现金流量表</option>
+       <option>1.资产负债表</option>
+       <option>2.利润表</option>
+       <option>3.现金流量表</option>
     </datalist>
     <br>
     <input type="submit" value="查询">
@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <input type="submit" value="新增资产负债表">
     </form>
     
-    <form action="">
+    <form action="fstatementJmpPs">
     <s:hidden name="userId" value="%{ruser.userId}"/>
     <input type="submit" value="新增利润表">
     </form>

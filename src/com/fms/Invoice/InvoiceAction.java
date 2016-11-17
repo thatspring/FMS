@@ -4,11 +4,13 @@ import com.fms.Invoice.InvoiceClass;
 import com.fms.User.UserClass;
 import com.fms.DBaction.InvoiceOperateDB;
 import com.fms.DBaction.UserOperateDB;
+
 import java.util.List;
 
 public class InvoiceAction {
 	private int userId;
 	private int invoiceId;
+	private UserClass user;
 	private UserClass ruser;
 	private InvoiceClass invoice;
 	private List<InvoiceClass> ilist;
@@ -70,6 +72,20 @@ public class InvoiceAction {
 		}
 	}
 	
+	public String GetUserIByUserNumber() throws Exception{
+		UserOperateDB uod = new UserOperateDB();
+		ruser = uod.QueryUserP(userId);
+		InvoiceOperateDB iod = new InvoiceOperateDB();
+		invoice = iod.QueryInvoiceById(invoiceId);
+		UserOperateDB uod1 = new UserOperateDB();
+		user = uod1.QueryUserIByUserNumber(invoice.getInvoiceUnumber());
+		if(ruser!=null){
+			return "success";
+		}else{
+			return "error";
+		}
+	}
+	
 	
 	public int getUserId() {
 		return userId;
@@ -82,6 +98,12 @@ public class InvoiceAction {
 	}
 	public void setInvoiceId(int invoiceId) {
 		this.invoiceId = invoiceId;
+	}
+	public UserClass getUser() {
+		return user;
+	}
+	public void setUser(UserClass user) {
+		this.user = user;
 	}
 	public UserClass getRuser() {
 		return ruser;

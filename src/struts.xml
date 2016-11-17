@@ -97,7 +97,7 @@
     <result name="error">/error.jsp</result>
   </action>
   
-  <action name="invoiceUdetail" class="com.fms.User.UserAction" method="GetUserIByUserNumber">
+  <action name="invoiceUdetail" class="com.fms.Invoice.InvoiceAction" method="GetUserIByUserNumber">
     <result name="success">/uinformation.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
@@ -118,11 +118,51 @@
   </action>
   
   
+  
   <action name="userFstatements" class="com.fms.User.UserAction" method="GetUserP">
     <result name="success">/fstatements.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
   
+  <action name="fstatementJmpPs" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/pstatement.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="pstatementAdd" class="com.fms.Statement.PstatementAction" method="AddPstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="statementQuery" class="com.fms.Statement.PstatementAction" method="QueryStatement">
+    <result name="psuccess">/psdetail.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="pstatementUdetail" class="com.fms.Statement.PstatementAction" method="GetUserIByUserNumber">
+    <result name="success">/uinformation.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="pstatementQuery" class="com.fms.Statement.PstatementAction" method="QueryPstatement">
+    <result name="psuccess">/psdetail.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="pstatementUpJPs" class="com.fms.Statement.PstatementAction" method="QueryPstatement">
+    <result name="psuccess">/updateps.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="pstatementUpdate" class="com.fms.Statement.PstatementAction" method="UpdatePstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+ <action name="pstatementDelete" class="com.fms.Statement.PstatementAction" method="DeletePstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
   
 </package>
 </struts>    

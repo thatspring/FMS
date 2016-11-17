@@ -42,7 +42,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <tr>
      <td>项目类型：</td>
      <td><input type="text" name="invoice.invoiceProject"/></td>
-    </tr
+    </tr>
     <tr>
      <td>金额：</td>
      <td><input type="text" name="invoice.invoiceMoney"/></td>
