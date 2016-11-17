@@ -71,7 +71,7 @@ public class SalaryOperateDB {
     	return list;
     }
 	
-	public boolean DeleteSalary(int employeeID) throws Exception{
+	public boolean DeleteSalary(String employeeID) throws Exception{
         boolean result=false;
     	Connection conn = null;
 		PreparedStatement st = null;
@@ -79,7 +79,7 @@ public class SalaryOperateDB {
         	conn=DBconnection.Conn();
         	String sql="delete from salary where employeeID=?";
             st = conn.prepareStatement(sql);
-            st.setInt(1, employeeID);
+            st.setString(1, employeeID);
             if (st.executeUpdate()==1){
                 result=true;
             }
