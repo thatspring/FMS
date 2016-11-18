@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<style>
-		.login input{
+		#login input{
     		height: 30px;/*登录和注册按钮的高度*/
     		color:  white;/*登录和注册按钮字体颜色为白色*/
     		font-size: 18px;/*登录和注册按钮的字体大小*/
