@@ -70,5 +70,9 @@
     <result name="error">/error.jsp</result>
   </action>
 
+  <action name="employeeAdd" class="com.fms.Salary.SalaryAciton" method="AddEmployee">
+    <result name="success">/salary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
 </package>
 </struts>    

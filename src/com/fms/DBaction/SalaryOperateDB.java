@@ -61,7 +61,7 @@ public class SalaryOperateDB {
             	//t_salary.setCutpayment(rs.getFloat("cutpayment"));
             	//t_salary.setFsalary(rs.getFloat("fsalary"));
             	t_salary.setCheckflag(rs.getBoolean("checkflag"));
-            	t_salary.set
+            	t_salary.setSalarydate(rs.getDate("salarydate"));
             	list.add(t_salary);
             }
             st.close();

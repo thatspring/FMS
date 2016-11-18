@@ -24,19 +24,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
    <h3>你好！<s:property value="ruser.userName"/></h3>
-   <form action="accountAdd">
+   <form action="employeeAdd">
    <s:hidden name="userId" value="%{ruser.userId}"/></span>
    <table>
     <tr>
-     <th>员工ID</th><th>姓名</th><th>工作天数</th><th>请假天数</th><th>领取审核</th><th>时间</th>
+     <th>员工ID</th><th>姓名</th><th>工作天数</th><th>请假天数</th><th style="width: 129px; ">工资/天</th><th>领取审核</th><th>时间</th>
     </tr>
     <tr>
-     <td><input type="text" name=""/></td>
-     <td>￥<input type="text" name="account.accountMoney"/></td>
-     <td><input type="text" name="account.accountType"/></td>
-     <td><input type="date" name="account.accountDate"/></td>
-     
-     
+     <td><input type="text" name="salaryinfo.employeeID"/></td>
+     <td><input type="text" name="salaryinfo.employeeName"/></td>
+     <td><input type="text" name="salaryinfo.workingtime"/></td>
+     <td><input type="text" name="salaryinfo.leavetime"/></td>
+     <td>￥<input type="text" name="salaryinfo.salarylevel" style="width: 111px; "></td>
+     <td><input type="text" name="salaryinfo.checkflag"/></td>
+     <td><input type="date" name="salaryinfo.salarydate"/></td>
     </tr>
    </table>
    <input type="submit" value="提交">
