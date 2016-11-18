@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 	<div id="login" style="position:absolute;left:780;top:300">
 		<input type="button" id="Button" value="begin"
-			onClick="javascript:windows.location.href=login.jsp"> 
+			onClick="href='login.jsp'"> 
 	</div>
     
   </body>
