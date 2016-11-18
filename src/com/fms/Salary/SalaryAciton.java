@@ -13,12 +13,16 @@ public class SalaryAciton {
 	private List<SalaryClass> slist;
 	private int userId;
 	private UserClass ruser;
-	private float gMoney;
+	//private float gMoney;
 	
 	public String AddEmployee() throws Exception{
 		UserOperateDB auod = new UserOperateDB();
 	    ruser = auod.QueryUserP(userId);
 		SalaryOperateDB aod=new SalaryOperateDB();
+		salaryinfo.setGrosspay(CalculationGMoney());
+		salaryinfo.setCutpayment(CalculationCMoney());
+		salaryinfo.setFsalary(CalculationFMoney());
+		//System.out.println(gMoney);
 		if(aod.AddEmployee(salaryinfo)){
 			return "success";
 		}else{
@@ -30,25 +34,34 @@ public class SalaryAciton {
 	    ruser = auod.QueryUserP(userId);
 		SalaryOperateDB aod=new SalaryOperateDB();
 		slist=aod.QuerySalary(salaryinfo);
-		gMoney=CalculationMoney(slist);
-		System.out.println(gMoney);
 		if(slist!=null){
 			return "success";
 		}else{
 			return "error";
 		}
 	}
-	private float CalculationMoney(List<SalaryClass> list) {
+	private float CalculationGMoney() {
 		float gmoney=0;
-		int i=0;
-		for(i=0;i<list.size();i++){
-			SalaryClass ac=list.get(i);
-			float slevel=ac.getSalarylevel();
-			int wtime=ac.getWorkingtime();
-			int ltime=ac.getLeavetime();
-			gmoney = (wtime-ltime)*slevel;
-		}
+		int wt=salaryinfo.getWorkingtime();
+		//int lt=salaryinfo.getLeavetime();
+		float sl=salaryinfo.getSalarylevel();
+		gmoney=wt*sl;
 		return gmoney;
+	}
+	private float CalculationCMoney() {
+		float cmoney=0;
+		int lt=salaryinfo.getLeavetime();
+		float sl=salaryinfo.getSalarylevel();
+		cmoney=lt*sl;
+		return cmoney;
+	}
+	private float CalculationFMoney() {
+		float fmoney=0;
+		int wt=salaryinfo.getWorkingtime();
+		int lt=salaryinfo.getLeavetime();
+		float sl=salaryinfo.getSalarylevel();
+		fmoney=(wt-lt)*sl;
+		return fmoney;
 	}
 	public String DeleteEmployee() throws Exception{
         UserOperateDB auod = new UserOperateDB();
@@ -60,4 +73,6 @@ public class SalaryAciton {
 			return "error";
 		}
 	}
+	
+	
 }

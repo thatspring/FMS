@@ -57,9 +57,9 @@ public class SalaryOperateDB {
             	t_salary.setWorkingtime(rs.getInt("workingtime"));
             	t_salary.setLeavetime(rs.getInt("leavetime"));
             	t_salary.setSalarylevel(rs.getFloat("salarylevel"));
-            	t_salary.setGrosspay(rs.getFloat("grosspay"));
-            	t_salary.setCutpayment(rs.getFloat("cutpayment"));
-            	t_salary.setFsalary(rs.getFloat("fsalary"));
+            	//t_salary.setGrosspay(rs.getFloat("grosspay"));
+            	//t_salary.setCutpayment(rs.getFloat("cutpayment"));
+            	//t_salary.setFsalary(rs.getFloat("fsalary"));
             	t_salary.setCheckflag(rs.getBoolean("checkflag"));
             	list.add(t_salary);
             }
