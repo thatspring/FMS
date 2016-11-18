@@ -21,10 +21,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  	<div id="Layer1" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1">
-		<img src="source/image/welcome_bg.jpg"/>
+  	<div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1">
+		<img src="source/image/welcome_bg.jpg" height="100%" width="100%"/>
 	</div>
-	<img src="source/image/welcome_title.png"/>
+	<div id="title" style="position:absolute;left:500:top:10">
+		<img src="source/image/welcome_title.png"/></div>
     <a href="login.jsp">登陆</a>
   </body>
 </html>
