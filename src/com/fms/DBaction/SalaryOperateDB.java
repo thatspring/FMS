@@ -17,17 +17,19 @@ public class SalaryOperateDB {
         try{
         	conn=DBconnection.Conn();
         	String sql="insert into salary(employeeID,employeeName,workingtime,"
-        			+ "leavetime,salarylevel,grosspay,cutpayment,fsalary,checkflag) "
-        			+ "value(null,?,?,?,?,?,?,?,?)";
+        			+ "leavetime,salarylevel,grosspay,cutpayment,fsalary,checkflag,salarydate) "
+        			+ "value(?,?,?,?,?,?,?,?,?,?)";
             st = conn.prepareStatement(sql);
-            st.setString(1, salaryinfo.getEmployeeName());
-            st.setInt(2, salaryinfo.getWorkingtime());
-            st.setInt(3, salaryinfo.getLeavetime());
-            st.setFloat(4, salaryinfo.getSalarylevel());
-            st.setFloat(5, salaryinfo.getGrosspay());
-            st.setFloat(6, salaryinfo.getCutpayment());
-            st.setFloat(7, salaryinfo.getFsalary());
-            st.setBoolean(8, salaryinfo.getCheckflag());
+            st.setString(1, salaryinfo.getEmployeeID());
+            st.setString(2, salaryinfo.getEmployeeName());
+            st.setInt(3, salaryinfo.getWorkingtime());
+            st.setInt(4, salaryinfo.getLeavetime());
+            st.setFloat(5, salaryinfo.getSalarylevel());
+            st.setFloat(6, salaryinfo.getGrosspay());
+            st.setFloat(7, salaryinfo.getCutpayment());
+            st.setFloat(8, salaryinfo.getFsalary());
+            st.setBoolean(9, salaryinfo.getCheckflag());
+            st.setDate(10, salaryinfo.getSalarydate());
             if(st.executeUpdate()==1){
             	result=true;
             }
@@ -57,9 +59,9 @@ public class SalaryOperateDB {
             	t_salary.setWorkingtime(rs.getInt("workingtime"));
             	t_salary.setLeavetime(rs.getInt("leavetime"));
             	t_salary.setSalarylevel(rs.getFloat("salarylevel"));
-            	//t_salary.setGrosspay(rs.getFloat("grosspay"));
-            	//t_salary.setCutpayment(rs.getFloat("cutpayment"));
-            	//t_salary.setFsalary(rs.getFloat("fsalary"));
+            	t_salary.setGrosspay(rs.getFloat("grosspay"));
+            	t_salary.setCutpayment(rs.getFloat("cutpayment"));
+            	t_salary.setFsalary(rs.getFloat("fsalary"));
             	t_salary.setCheckflag(rs.getBoolean("checkflag"));
             	t_salary.setSalarydate(rs.getDate("salarydate"));
             	list.add(t_salary);
