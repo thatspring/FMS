@@ -30,7 +30,7 @@ public class SalaryOperateDB {
             st.setFloat(7, salaryinfo.getCutpayment());
             st.setFloat(8, salaryinfo.getFsalary());
             st.setBoolean(9, salaryinfo.getCheckflag());
-            st.setDate(10, salaryinfo.getSalarydate());
+            st.setString(10, salaryinfo.getSalarydate());
             if(st.executeUpdate()==1){
             	result=true;
             }
@@ -49,9 +49,9 @@ public class SalaryOperateDB {
 		ResultSet rs = null;
         try{
         	conn=DBconnection.Conn();
-        	String sql="select * from salary where employeeName=?";
+        	String sql="select * from salary where salarydate=?";
             st = conn.prepareStatement(sql);
-            st.setString(1, salaryinfo.getEmployeeName());
+            st.setString(1, salaryinfo.getSalarydate());
             rs=st.executeQuery();
             while(rs.next()){
             	SalaryClass t_salary = new SalaryClass();
@@ -64,7 +64,7 @@ public class SalaryOperateDB {
             	t_salary.setCutpayment(rs.getFloat("cutpayment"));
             	t_salary.setFsalary(rs.getFloat("fsalary"));
             	t_salary.setCheckflag(rs.getBoolean("checkflag"));
-            	t_salary.setSalarydate(rs.getDate("salarydate"));
+            	t_salary.setSalarydate(rs.getString("salarydate"));
             	list.add(t_salary);
             }
             st.close();

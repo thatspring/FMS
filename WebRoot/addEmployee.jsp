@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
    <h3>你好！<s:property value="ruser.userName"/></h3>
    <form action="employeeAdd">
-   <s:hidden name="userId" value="%{ruser.userId}"/></span>
+   <span><s:hidden name="userId" value="%{ruser.userId}"/></span>
    <table>
     <tr>
      <th>员工ID</th><th>姓名</th><th>工作天数</th><th>请假天数</th><th style="width: 129px; ">工资/天</th><th>领取审核</th><th>时间</th>

@@ -18,7 +18,7 @@ public class SalaryAciton {
 	public String AddEmployee() throws Exception{
 		UserOperateDB auod = new UserOperateDB();
 	    ruser = auod.QueryUserP(userId);
-	    System.out.println(salaryinfo.getSalarydate());
+	    //System.out.println(salaryinfo.getSalarydate());
 		SalaryOperateDB aod=new SalaryOperateDB();
 		salaryinfo.setGrosspay(CalculationGMoney());
 		salaryinfo.setCutpayment(CalculationCMoney());
@@ -68,6 +68,7 @@ public class SalaryAciton {
         UserOperateDB auod = new UserOperateDB();
 	    ruser = auod.QueryUserP(userId);
 		SalaryOperateDB aod=new SalaryOperateDB();
+		System.out.println(employeeID);
 		if(aod.DeleteSalary(employeeID)){
 			return "success";
 		}else{

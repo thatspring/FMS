@@ -11,7 +11,7 @@ public class SalaryClass {
 	private float cutpayment;    //扣款
 	private float fsalary;       //实付工资
 	private boolean checkflag;   //领取确认
-	private Date salarydate;
+	private String salarydate;
 	
 	public String getEmployeeID() {
 		return employeeID;
@@ -75,10 +75,12 @@ public class SalaryClass {
 	public void setCheckflag(boolean checkflag) {
 		this.checkflag = checkflag;
 	}
-	public Date getSalarydate() {
+	public String getSalarydate() {
+		System.out.println(salarydate);
 		return salarydate;
 	}
-	public void setSalarydate(Date salarydate) {
+	public void setSalarydate(String salarydate) {
+		
 		this.salarydate = salarydate;
 	}
 }
