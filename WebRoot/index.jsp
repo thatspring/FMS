@@ -26,6 +26,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    			border: 0px;/*无边框*/
     		padding: 0px;/*无内边距*/
     		cursor: pointer;/*登录和注册按钮的选择时为手形状*/
+    		background-color: #CC865E;/*按钮的背景颜色*/
+    		width: 260px;/*按钮的宽度*/
 		}
 	</style>
   </head>
