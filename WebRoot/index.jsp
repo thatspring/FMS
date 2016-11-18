@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		background-color: #CC865E;/*按钮的背景颜色*/
     		width: 260px;/*按钮的宽度*/
     		margin: 0px auto;
-    		margin-top: 10%;
+    		margin-top: 13%;
 		}
 		#login input:hover {
    			background-color: white;/*按钮选中后背景颜色为白色*/
@@ -40,6 +40,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		#title img{
 			display: block;
 			margin:0px auto;
+			margin-top: 3%;
 		}
 	</style>
   </head>
