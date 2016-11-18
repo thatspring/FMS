@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="title" style="position:absolute;left:350;top:10">
 		<img src="source/image/welcome_title.png"/>
 	</div>
-	<div id="login" style="position:absolute;left:500;top:300">
+	<div id="login" style="position:center">
 		<a href="login.jsp">登陆</a>
 	</div>
     
