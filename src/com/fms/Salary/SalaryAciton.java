@@ -4,7 +4,7 @@ import com.fms.Salary.SalaryClass;
 import com.fms.DBaction.SalaryOperateDB;
 import com.fms.DBaction.UserOperateDB;
 import com.fms.User.UserClass;
-
+import java.sql.Date;
 import java.util.List;
 
 public class SalaryAciton {
@@ -18,11 +18,12 @@ public class SalaryAciton {
 	public String AddEmployee() throws Exception{
 		UserOperateDB auod = new UserOperateDB();
 	    ruser = auod.QueryUserP(userId);
+	    System.out.println(salaryinfo.getSalarydate());
 		SalaryOperateDB aod=new SalaryOperateDB();
 		salaryinfo.setGrosspay(CalculationGMoney());
 		salaryinfo.setCutpayment(CalculationCMoney());
 		salaryinfo.setFsalary(CalculationFMoney());
-		//System.out.println(gMoney);
+		System.out.println(CalculationGMoney());
 		if(aod.AddEmployee(salaryinfo)){
 			return "success";
 		}else{
@@ -72,6 +73,36 @@ public class SalaryAciton {
 		}else{
 			return "error";
 		}
+	}
+	public String getEmployeeID() {
+		return employeeID;
+	}
+	public void setEmployeeID(String employeeID) {
+		this.employeeID = employeeID;
+	}
+	public SalaryClass getSalaryinfo() {
+		return salaryinfo;
+	}
+	public void setSalaryinfo(SalaryClass salaryinfo) {
+		this.salaryinfo = salaryinfo;
+	}
+	public List<SalaryClass> getSlist() {
+		return slist;
+	}
+	public void setSlist(List<SalaryClass> slist) {
+		this.slist = slist;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public UserClass getRuser() {
+		return ruser;
+	}
+	public void setRuser(UserClass ruser) {
+		this.ruser = ruser;
 	}
 	
 	

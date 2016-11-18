@@ -1,7 +1,6 @@
 package com.fms.Salary;
 
 import java.sql.Date;
-
 public class SalaryClass {
 	private String employeeID;   //员工ID
 	private String employeeName;  //员工姓名
