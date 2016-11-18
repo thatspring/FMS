@@ -74,8 +74,23 @@
     <result name="success">/salary.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
-
+  <action name="employeeJmpA" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/addEmployee.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
   <action name="employeeAdd" class="com.fms.Salary.SalaryAciton" method="AddEmployee">
+    <result name="success">/salary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  
+  <action name="employeeQuery" class="com.fms.Salary.SalaryAciton" method="QueryEmployee">
+    <result name="success">/listsalary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="employeeDelete" class="com.fms.Salary.SalaryAciton" method="DeleteEmployee">
     <result name="success">/salary.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
