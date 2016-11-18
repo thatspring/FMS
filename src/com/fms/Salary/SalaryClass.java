@@ -1,5 +1,7 @@
 package com.fms.Salary;
 
+import java.sql.Date;
+
 public class SalaryClass {
 	private String employeeID;   //员工ID
 	private String employeeName;  //员工姓名
@@ -10,6 +12,7 @@ public class SalaryClass {
 	private float cutpayment;    //扣款
 	private float fsalary;       //实付工资
 	private boolean checkflag;   //领取确认
+	private Date salarydate;
 	
 	public String getEmployeeID() {
 		return employeeID;
@@ -72,5 +75,11 @@ public class SalaryClass {
 	}
 	public void setCheckflag(boolean checkflag) {
 		this.checkflag = checkflag;
+	}
+	public Date getSalarydate() {
+		return salarydate;
+	}
+	public void setSalarydate(Date salarydate) {
+		this.salarydate = salarydate;
 	}
 }
