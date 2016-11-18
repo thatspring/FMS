@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 	<style>
-		.login button {
+		.login .Button {
     		height: 30px;/*登录和注册按钮的高度*/
     		color:  white;/*登录和注册按钮字体颜色为白色*/
     		font-size: 18px;/*登录和注册按钮的字体大小*/
@@ -38,7 +38,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<img src="source/image/welcome_title.png"/>
 	</div>
 	<div id="login" style="position:absolute;left:780;top:300">
-		<button onClick="login.jsp">登陆</button>
+		<input type="button" id="Button" value="begin"
+			onClick="javascript:windows.location.href=login.jsp"> 
 	</div>
     
   </body>
