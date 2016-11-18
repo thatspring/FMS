@@ -20,6 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<style>
 		#login input{
+			border-radius: 5px;
 			display: block;
     		height: 60px;
     		color:  white;
@@ -27,15 +28,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    			border: 0px;/*无边框*/
     		padding: 0px;/*无内边距*/
     		cursor: pointer;
-    		background-color: #CC865E;/*按钮的背景颜色*/
+    		background-color: #3399CC;/*按钮的背景颜色*/
     		width: 260px;/*按钮的宽度*/
     		margin: 0px auto;
     		margin-top: 13%;
 		}
 		#login input:hover {
    			background-color: white;/*按钮选中后背景颜色为白色*/
-    		color:  #CC865E;/*按钮选中后字体颜色为褐色*/
-    		border: 1px solid #CC865E;/*按钮选中后边框颜色为褐色*/
+    		color:  #3399CC;/*按钮选中后字体颜色为褐色*/
+    		border: 1px solid #3399CC;/*按钮选中后边框颜色为褐色*/
 		}
 		#title img{
 			display: block;
