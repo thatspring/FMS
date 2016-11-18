@@ -37,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <s:iterator id="i" value="slist">
     <tr>
      <td><s:property value="#i.employeeID"/></td>
-     <td><s:property value="#i.employeeName"/></td>
+     <td><s:property value="#i.employeeName" /></td>
      <td><s:property value="#i.workingtime"/></td>
      <td><s:property value="#i.leavetime"/></td>
      <td><s:property value="#i.salarylevel"/></td>
