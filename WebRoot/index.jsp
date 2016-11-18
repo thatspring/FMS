@@ -20,14 +20,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<style>
 		#login input{
-    		height: 30px;/*登录和注册按钮的高度*/
-    		color:  white;/*登录和注册按钮字体颜色为白色*/
-    		font-size: 18px;/*登录和注册按钮的字体大小*/
+			display: block;
+    		height: 60px;
+    		color:  white;
+    		font-size: 35px;
    			border: 0px;/*无边框*/
     		padding: 0px;/*无内边距*/
-    		cursor: pointer;/*登录和注册按钮的选择时为手形状*/
+    		cursor: pointer;
     		background-color: #CC865E;/*按钮的背景颜色*/
     		width: 260px;/*按钮的宽度*/
+    		margin: 0px auto;
+    		margin-top: 10%;
+		}
+		#login input:hover {
+   			background-color: white;/*按钮选中后背景颜色为白色*/
+    		color:  #CC865E;/*按钮选中后字体颜色为褐色*/
+    		border: 1px solid #CC865E;/*按钮选中后边框颜色为褐色*/
+		}
+		#title img{
+			display: block;
+			margin:0px auto;
 		}
 	</style>
   </head>
@@ -36,11 +48,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1">
 		<img src="source/image/welcome_bg.jpg" height="100%" width="100%"/>
 	</div>
-	<div id="title" style="position:absolute;left:350;top:10">
+	<div id="title">
 		<img src="source/image/welcome_title.png"/>
 	</div>
-	<div id="login" style="position:absolute;left:780;top:300">
-		<input type="button" id="Button" value="begin"
+	<div id="login">
+		<input type="button" id="Button" value="进入系统"
 			onclick="location.href='login.jsp'"> 
 	</div>
     
