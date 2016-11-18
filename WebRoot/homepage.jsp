@@ -31,6 +31,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a href="">发票编辑</a><br>
     <a href="">报表编辑</a><br>
     <a href="">税率计算</a><br>
-    <a href="">工资发放</a><br>
+    <a href="userSalary.action?userId=<s:property value="ruser.userId"/>"">工资发放</a><br>
   </body>
 </html>

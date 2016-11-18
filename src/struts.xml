@@ -69,6 +69,11 @@
     <result name="success">/accounting.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
+  
+  <action name="userSalary" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/salary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
 
   <action name="employeeAdd" class="com.fms.Salary.SalaryAciton" method="AddEmployee">
     <result name="success">/salary.jsp</result>
