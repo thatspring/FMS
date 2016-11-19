@@ -32,19 +32,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			height:400px;
 			margin: 0px auto;
 			margin-top: 8%;
+			
 		}
 		.begin .l_form{
 			float:right;
-			width:48%;
+			width:60%;
 		}
 		.begin .l_form .split{
 			float:left;
-			height:91%;
+			height:86%;
 			border:1px solid #95B8E7;
 		}
 		.begin .l_form .login_form{
 			float:right;
 			margin-top: 2.1%;
+			width:80%;
 		}
 		.begin .l_form .login_form .easyui-panel .t_button input{
 			background-color: white;
@@ -61,16 +63,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 		.begin .insert_img{
 			float:left;
-			width:49%;
+			width:40%;
 			margin-top: 0.8%;
 		}
 	</style>
   </head>
   
   <body>
+  <!--  
+  	<div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;opacity: 0.4;">
+		<img src="source/image/login_bg.jpg" height="100%" width="100%"/>
+	</div>
+  -->
     <div class="begin">
   	 <div class="insert_img">
-  	 	<img src="source/image/login.GIF" height="81%" width="100%">
+  	 	<img src="source/image/login.png">
   	 </div>
      <div class="l_form">
      <div class="split"></div>
