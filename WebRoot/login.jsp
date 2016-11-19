@@ -27,11 +27,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <script type="text/javascript" src="source/jquery-easyui-1.5/jquery.easyui.min.js"></script>
 	
 	<style type="text/css">
-		.l_form{
-			margin-left: 50%;
-			margin-top:6%;
+		.begin{
+			width:900px;
+			height:400px;
+			margin: 0px auto;
+			margin-top: 8%;
 		}
-		.l_form .easyui-panel .t_button input{
+		.begin .l_form{
+			float:right;
+			width:48%;
+		}
+		.begin .l_form .split{
+			float:left;
+			height:91%;
+			border:1px solid #95B8E7;
+		}
+		.begin .l_form .login_form{
+			float:right;
+			margin-top: 2.1%;
+		}
+		.begin .l_form .login_form .easyui-panel .t_button input{
 			background-color: white;
 			border: 1px solid #95B8E7;
 			padding: 0px;
@@ -40,18 +55,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	border-radius: 5px;
         	color: #95B8E7;
 		}
-		.l_form .easyui-panel .t_button input:hover{
+		.begin .l_form .login_form .easyui-panel .t_button input:hover{
 			background-color: #95B8E7;
 			color: white;
+		}
+		.begin .insert_img{
+			float:left;
+			width:49%;
+			margin-top: 0.8%;
 		}
 	</style>
   </head>
   
   <body>
+    <div class="begin">
+  	 <div class="insert_img">
+  	 	<img src="source/image/login.GIF" height="81%" width="100%">
+  	 </div>
      <div class="l_form">
+     <div class="split"></div>
+     <div class="login_form">
      <h2>登陆</h2><br/>
-     <form action="userLogin">
-        <div style="margin:20px 0;"></div>
+     <form action="userLogin"> 
     	<div class="easyui-panel" style="width:400px;padding:50px 60px;">
     		<span>用户名：</span>
         	<div style="margin-bottom:20px" class="input_panel">
@@ -69,5 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	</div>
      </form>
      </div>
+     </div>
+    </div>
   </body>
 </html>
