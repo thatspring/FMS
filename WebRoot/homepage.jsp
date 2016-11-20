@@ -28,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		.topbar{
     		width:100%;
-    		background-color: #6495ED;
+    		background-color: #000033;
     		display: inline-block;
     		
 		}
@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
 		<img src="source/image/homepage_bg.jpg" height="100%" width="100%"/>
-	</div>
+  </div>
   <div class="topbar">
   	  <div class="title">
   	  	<img alt="" src="source/image/homepage_title.png">
