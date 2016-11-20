@@ -28,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		.topbar{
     		width:100%;
-    		background-color: #191970;
+    		background-color: #778899;
     		display: inline-block;
 		}
 		.topbar .title{
@@ -38,37 +38,69 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			float:right;
     		width:50%;
     		margin: 0 auto;
+    		text-decoration: none;
 		}
 		.topbar .topbody .info{
 			float:right;
 			color:#FFF;
+			margin-right:5%;
+			margin-top:3%;
+			text-decoration: none;
 		}
 		.topbar .topbody .info a{
 			color:	#FFFFF0;
+		}
+		.function {
+			margin:0px auto;
+			margin-top:10%;
+			text-align:center;
+		}
+		.function input{
+    		height: 200px;
+    		color:  white;
+    		font-size: 35px;
+   			border: 0px;/*无边框*/
+    		padding: 0px;/*无内边距*/
+    		cursor: pointer;
+    		background-color: #778899;/*按钮的背景颜色*/
+    		width: 220px;/*按钮的宽度*/
+    		margin: 0px auto;
+    		margin-top: 3%;
 		}
 	</style>
 
   </head>
   
-  <body style="background-color:#F5F5F5">
+  <body>
+  <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
+		<img src="source/image/homepage_bg.jpg" height="100%" width="100%"/>
+	</div>
   <div class="topbar">
   	  <div class="title">
   	  	<img alt="" src="source/image/homepage_title.png">
   	  </div>
       <div class="topbody">
-      	<h3 class="info">
+      	<div class="info">
       		你好！
       		<s:property value="ruser.userName"/>
+      		<a href="userPlay.action?userId=<s:property value="ruser.userId"/>">[个人信息]</a>
       		<a href="login.jsp">[退出登录]</a>
-      	</h3>
+      	</div>
       </div>
   </div>
-    <a href="userPlay.action?userId=<s:property value="ruser.userId"/>">查看个人信息</a><br>
-    <a href="userAccount.action?userId=<s:property value="ruser.userId"/>"">记账功能</a><br>
-    <a href="">流水功能</a><br>
-    <a href="">发票编辑</a><br>
-    <a href="">报表编辑</a><br>
-    <a href="">税率计算</a><br>
-    <a href="userSalary.action?userId=<s:property value="ruser.userId"/>"">工资发放</a><br>
+  <div class="function">
+  	<input type="button" id="Button" value="记账功能" 
+  		onclick="location.href='userAccount.action?userId=<s:property value="ruser.userId"/>'"> 
+  	<input type="button" id="Button" value="流水功能" 
+  		onclick="location.href=''"> 
+  	<input type="button" id="Button" value="发票编辑" 
+  		onclick="location.href=''"> 
+  	<input type="button" id="Button" value="报表编辑" 
+  		onclick="location.href=''"> 
+  	<input type="button" id="Button" value="税率计算" 
+  		onclick="location.href=''">
+  	<input type="button" id="Button" value="工资发放" 
+  		onclick="location.href='userSalary.action?userId=<s:property value="ruser.userId"/>'">
+  </div>
   </body>
 </html>
