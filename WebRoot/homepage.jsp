@@ -28,8 +28,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		
 		.topbar{
     		width:100%;
-    		background-color: #778899;
+    		background-color: #6495ED;
     		display: inline-block;
+    		
 		}
 		.topbar .title{
 			float:left;
@@ -57,15 +58,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 		.function input{
     		height: 200px;
-    		color:  white;
+    		color:  	#00008B;
     		font-size: 35px;
    			border: 0px;/*无边框*/
     		padding: 0px;/*无内边距*/
     		cursor: pointer;
-    		background-color: #778899;/*按钮的背景颜色*/
+    		background-color:	#F0FFFF;/*按钮的背景颜色*/
     		width: 220px;/*按钮的宽度*/
     		margin: 0px auto;
     		margin-top: 3%;
+    		opacity:0.7;
+		}
+		.function input:hover{
+			border:2px solid #00008B;
 		}
 	</style>
 
