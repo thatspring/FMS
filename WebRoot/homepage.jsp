@@ -19,12 +19,50 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	
+	<style type="text/css">
+		*{
+			margin: 0px;
+    		padding:0px;
+		}
+		
+		.topbar{
+    		width:100%;
+    		background-color: #191970;
+    		display: inline-block;
+		}
+		.topbar .title{
+			float:left;
+		}
+		.topbar .topbody{
+			float:right;
+    		width:50%;
+    		margin: 0 auto;
+		}
+		.topbar .topbody .info{
+			float:right;
+			color:#FFF;
+		}
+		.topbar .topbody .info a{
+			color:	#FFFFF0;
+		}
+	</style>
 
   </head>
   
-  <body>
-    <h3>你好！<s:property value="ruser.userName"/>欢迎登陆
-    <a href="login.jsp">退出登录</a></h3>
+  <body style="background-color:#F5F5F5">
+  <div class="topbar">
+  	  <div class="title">
+  	  	<img alt="" src="source/image/homepage_title.png">
+  	  </div>
+      <div class="topbody">
+      	<h3 class="info">
+      		你好！
+      		<s:property value="ruser.userName"/>
+      		<a href="login.jsp">[退出登录]</a>
+      	</h3>
+      </div>
+  </div>
     <a href="userPlay.action?userId=<s:property value="ruser.userId"/>">查看个人信息</a><br>
     <a href="userAccount.action?userId=<s:property value="ruser.userId"/>"">记账功能</a><br>
     <a href="">流水功能</a><br>
