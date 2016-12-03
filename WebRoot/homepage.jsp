@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'homepage.jsp' starting page</title>
+    <title>财务管理系统</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,38 +19,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<link type="text/css" rel="stylesheet" href="header.css"/> 
 	
 	<style type="text/css">
-		*{
-			margin: 0px;
-    		padding:0px;
-		}
 		
-		.topbar{
-    		width:100%;
-    		background-color: #000033;
-    		display: inline-block;
-    		
-		}
-		.topbar .title{
-			float:left;
-		}
-		.topbar .topbody{
-			float:right;
-    		width:50%;
-    		margin: 0 auto;
-    		text-decoration: none;
-		}
-		.topbar .topbody .info{
-			float:right;
-			color:#FFF;
-			margin-right:5%;
-			margin-top:3%;
-			text-decoration: none;
-		}
-		.topbar .topbody .info a{
-			color:	#FFFFF0;
-		}
 		.function {
 			margin:0px auto;
 			margin-top:10%;
@@ -88,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       	<div class="info">
       		你好！
       		<s:property value="ruser.userName"/>
-      		<a href="userPlay.action?userId=<s:property value="ruser.userId"/>">[个人信息]</a>
+      		<a href="userPlay.action?userId=<s:property value="ruser.userId"/>">[个人中心]</a>
       		<a href="login.jsp">[退出登录]</a>
       	</div>
       </div>

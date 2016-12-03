@@ -27,7 +27,6 @@
     <result name="success">/changeuser.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
-  
   <action name="userChangeP" class="com.fms.User.UserAction" method="ChangeUserP">
     <result name="success">/information.jsp</result>
     <result name="error">/error.jsp</result>
