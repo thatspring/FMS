@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+		*{
+			margin: 0px;
+    		padding:0px;
+		}
+		
+		.topbar{
+    		width:100%;
+    		background-color: #000033;
+    		display: inline-block;
+    		
+		}
+		.topbar .title{
+			float:left;
+		}
+		.topbar .topbody{
+			float:right;
+    		width:50%;
+    		margin: 0 auto;
+    		text-decoration: none;
+		}
+		.topbar .topbody .info{
+			float:right;
+			color:#FFF;
+			margin-right:5%;
+			margin-top:3%;
+			text-decoration: none;
+		}
+		.topbar .topbody .info a{
+			color:	#FFFFF0;
+		}

@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'index.jsp' starting page</title>
+    <title>财务管理系统</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
@@ -18,10 +18,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<style>
+		#login input{
+			border-radius: 5px;
+			display: block;
+    		height: 60px;
+    		color:  white;
+    		font-size: 35px;
+   			border: 0px;/*无边框*/
+    		padding: 0px;/*无内边距*/
+    		cursor: pointer;
+    		background-color: #3399CC;/*按钮的背景颜色*/
+    		width: 260px;/*按钮的宽度*/
+    		margin: 0px auto;
+    		margin-top: 13%;
+		}
+		#login input:hover {
+   			background-color: white;/*按钮选中后背景颜色为白色*/
+    		color:  #3399CC;/*按钮选中后字体颜色为褐色*/
+    		border: 1px solid #3399CC;/*按钮选中后边框颜色为褐色*/
+		}
+		#title img{
+			display: block;
+			margin:0px auto;
+			margin-top: 3%;
+		}
+	</style>
   </head>
   
   <body>
-    <h1>Welcome to FinancialManagementSystem</h1><br>
-    <a href="login.jsp">登陆</a>
+  	<div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
+		<img src="source/image/welcome_bg.jpg" height="100%" width="100%"/>
+	</div>
+	<div id="title">
+		<img src="source/image/welcome_title.png"/>
+	</div>
+	<div id="login">
+		<input type="button" id="Button" value="进入系统"
+			onclick="location.href='login.jsp'"> 
+	</div>
+    
   </body>
 </html>

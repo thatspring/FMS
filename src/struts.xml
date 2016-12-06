@@ -164,5 +164,32 @@
     <result name="error">/error.jsp</result>
   </action>
   
+
+
+  <action name="userSalary" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/salary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="employeeJmpA" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/addsalary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="employeeAdd" class="com.fms.Salary.SalaryAction" method="AddEmployee">
+    <result name="success">/salary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="employeeQuery" class="com.fms.Salary.SalaryAction" method="QueryEmployee">
+    <result name="success">/listsalary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="employeeDelete" class="com.fms.Salary.SalaryAction" method="DeleteEmployee">
+    <result name="success">/salary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
 </package>
 </struts>    
