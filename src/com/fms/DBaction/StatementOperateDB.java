@@ -1,6 +1,7 @@
 package com.fms.DBaction;
 
 import com.fms.Statement.PstatementClass;
+import com.fms.Statement.BstatementClass;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -143,4 +144,143 @@ public class StatementOperateDB {
     	return rpstatement;
     }
 
+	public boolean AddBstatement(BstatementClass bstatement)throws Exception{
+		boolean result=false;
+    	Connection conn = null;
+		PreparedStatement st = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="insert into bstatement(BstatementId,Bcurrent1,Bcurrent2,Bcurrent3,";
+        	sql+="Bfixed1,Bfixed2,Bfixed3,Bliabilities1,Bliabilities2,Bliabilities3,Bsurplus1,Bsurplus2,";
+        	sql+="Bsurplus3,BstatementUnumber,BstatementMonth,BstatementYear) value(null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            st = conn.prepareStatement(sql);
+            st.setString(1, bstatement.getBcurrent1());
+            st.setString(2, bstatement.getBcurrent2());
+            st.setString(3, bstatement.getBcurrent3());
+            st.setString(4, bstatement.getBfixed1());
+            st.setString(5, bstatement.getBfixed2());
+            st.setString(6, bstatement.getBfixed3());
+            st.setString(7, bstatement.getBliabilities1());
+            st.setString(8, bstatement.getBliabilities2());
+            st.setString(9, bstatement.getBliabilities3());
+            st.setString(10, bstatement.getBsurplus1());
+            st.setString(11, bstatement.getBsurplus2());
+            st.setString(12, bstatement.getBsurplus3());
+            st.setString(13, bstatement.getBstatementUnumber());
+            st.setString(14, bstatement.getBstatementMonth());
+            st.setString(15, bstatement.getBstatementYear());
+            if(st.executeUpdate()==1){
+            	result=true;
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+		return result;		
+	}
+	
+	public boolean UpdateBstatement(BstatementClass bstatement) throws Exception{
+		boolean result=false;
+    	Connection conn = null;
+		PreparedStatement st = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="update bstatement set Bcurrent1=?,Bcurrent2=?,Bcurrent3=?,";
+        	sql+="Bfixed1=?,Bfixed2=?,Bfixed3=?,Bliabilities1=?,Bliabilities2=?,Bliabilities3=?,";
+        	sql+="Bsurplus1=?,Bsurplus2=?,Bsurplus3=?,BstatementUnumber=?,BstatementMonth=?,BstatementYear=? ";
+        	sql+="where BstatementId=?";
+            st = conn.prepareStatement(sql);
+            st.setString(1, bstatement.getBcurrent1());
+            st.setString(2, bstatement.getBcurrent2());
+            st.setString(3, bstatement.getBcurrent3());
+            st.setString(4, bstatement.getBfixed1());
+            st.setString(5, bstatement.getBfixed2());
+            st.setString(6, bstatement.getBfixed3());
+            st.setString(7, bstatement.getBliabilities1());
+            st.setString(8, bstatement.getBliabilities2());
+            st.setString(9, bstatement.getBliabilities3());
+            st.setString(10, bstatement.getBsurplus1());
+            st.setString(11, bstatement.getBsurplus2());
+            st.setString(12, bstatement.getBsurplus3());
+            st.setString(13, bstatement.getBstatementUnumber());
+            st.setString(14, bstatement.getBstatementMonth());
+            st.setString(15, bstatement.getBstatementYear());
+            st.setInt(16, bstatement.getBstatementId());
+            if(st.executeUpdate()==1){
+            	result=true;
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+		return result;
+	}
+	
+	public boolean DeleteBstatement(int bstatementId) throws Exception{
+        boolean result=false;
+    	Connection conn = null;
+		PreparedStatement st = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="delete from bstatement where BstatementId=?";
+            st = conn.prepareStatement(sql);
+            st.setInt(1, bstatementId);
+            if (st.executeUpdate()==1){
+                result=true;
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    	return result;
+	}
+	
+	public BstatementClass QueryBstatementByYear(String str) throws Exception{
+        String sql="select * from bstatement where BstatementYear=?";
+        return QueryBstatement(str,sql);
+	}
+	
+	public BstatementClass QueryBstatementByDate(String str) throws Exception{
+        String sql="select * from bstatement where BstatementMonth=?";
+        return QueryBstatement(str,sql);
+	}
+	
+	private BstatementClass QueryBstatement(String str,String sql) throws Exception{
+		BstatementClass rbstatement = new BstatementClass();
+    	Connection conn = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+        try{
+        	conn=DBconnection.Conn();
+            st = conn.prepareStatement(sql);
+            st.setString(1, str);
+            rs=st.executeQuery();
+            if(rs.next()){
+            	rbstatement.setBstatementId(rs.getInt("BstatementId"));
+            	rbstatement.setBcurrent1(rs.getString("Bcurrent1"));
+            	rbstatement.setBcurrent2(rs.getString("Bcurrent2"));
+            	rbstatement.setBcurrent3(rs.getString("Bcurrent3"));
+            	rbstatement.setBfixed1(rs.getString("Bfixed1"));
+            	rbstatement.setBfixed2(rs.getString("Bfixed2"));
+            	rbstatement.setBfixed3(rs.getString("Bfixed3"));
+            	rbstatement.setBliabilities1(rs.getString("Bliabilities1"));
+            	rbstatement.setBliabilities2(rs.getString("Bliabilities2"));
+            	rbstatement.setBliabilities3(rs.getString("Bliabilities2"));
+            	rbstatement.setBsurplus1(rs.getString("Bsurplus1"));
+            	rbstatement.setBsurplus2(rs.getString("Bsurplus2"));
+            	rbstatement.setBsurplus3(rs.getString("Bsurplus3"));
+            	rbstatement.setBstatementUnumber(rs.getString("BstatementUnumber"));
+            	rbstatement.setBstatementMonth(rs.getString("BstatementMonth"));
+            	rbstatement.setBstatementYear(rs.getString("BstatementYear"));
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    	return rbstatement;
+	}
 }

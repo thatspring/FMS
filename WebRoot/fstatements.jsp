@@ -24,23 +24,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <h3>你好！<s:property value="ruser.userName"/></h3>
-    <form action="statementQuery">
-    <s:hidden name="userId" value="%{ruser.userId}"/>
+    <div>
     <span>请输入月份用于查询你当月的财务报表</span><br>
-    <input type="month" name="fsdate"/><br>
-    <span>请输入报表类型</span><br>
-    <input type="text" list="pasta" name="fstype"/>
-      <datalist id="pasta">
-       <option>1.资产负债表</option>
-       <option>2.利润表</option>
-       <option>3.现金流量表</option>
-    </datalist>
-    <br>
-    <input type="submit" value="查询">
+    
+    <form action="statementQueryb">
+    <s:hidden name="userId" value="%{ruser.userId}"/>
+    <input type="month" name="fsdate"/>
+    <input type="submit" value="查询资产负载表" >
     </form>
     
-    <div>
+    <form action="statementQueryp">
+    <s:hidden name="userId" value="%{ruser.userId}"/>
+    <input type="month" name="fsdate"/>
+    <input type="submit" value="查询利润表" >
+    </form>
+    
     <form action="">
+    <s:hidden name="userId" value="%{ruser.userId}"/>
+    <input type="month" name="fsdate"/>
+    <input type="submit" value="查询现金流量表" >
+    </form>
+    </div>
+    
+    <div>
+    <form action="fstatementJmpBs">
     <s:hidden name="userId" value="%{ruser.userId}"/>
     <input type="submit" value="新增资产负债表">
     </form>

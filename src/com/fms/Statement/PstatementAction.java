@@ -11,7 +11,6 @@ import com.fms.DBaction.UserOperateDB;
 public class PstatementAction {
 	private int userId;
 	private int PstatementId;
-	private String fstype;
 	private String fsdate;
 	private UserClass user;
 	private UserClass ruser;
@@ -101,19 +100,6 @@ public class PstatementAction {
 		}
 	}
 	
-	
-	public String QueryStatement() throws Exception{
-		if(fstype.charAt(0)=='2'){
-			return QueryPstatement();
-		}else if(fstype.charAt(0)=='1'){
-			return QueryPstatement();
-		}else if(fstype.charAt(0)=='3'){
-			return QueryPstatement();
-		}else{
-			return "";
-		}
-	}
-	
 	public int getUserId() {
 		return userId;
 	}
@@ -125,12 +111,6 @@ public class PstatementAction {
 	}
 	public void setPstatementId(int pstatementId) {
 		PstatementId = pstatementId;
-	}
-	public String getFstype() {
-		return fstype;
-	}
-	public void setFstype(String fstype) {
-		this.fstype = fstype;
 	}
 	public String getFsdate() {
 		return fsdate;

@@ -35,8 +35,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a href="invoiceQueryByDate.action?invoice.invoiceDate=<s:property value="invoice.invoiceDate"/>
    &userId=<s:property value="ruser.userId"/>">返回</a><br>
     </s:if>
+    <s:elseif test="%{bstatement.BstatementMonth!=null}">
+    <a href="statementQueryb.action?fsdate=<s:property value="bstatement.BstatementMonth"/>
+   &userId=<s:property value="ruser.userId"/>">返回</a><br>
+    </s:elseif>
     <s:elseif test="%{pstatement.PstatementDate!=null}">
-    <a href="pstatementQuery.action?fsdate=<s:property value="pstatement.PstatementDate"/>
+    <a href="statementQueryp.action?fsdate=<s:property value="pstatement.PstatementDate"/>
    &userId=<s:property value="ruser.userId"/>">返回</a><br>
     </s:elseif>
   </body>

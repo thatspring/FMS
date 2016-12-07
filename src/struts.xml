@@ -124,6 +124,41 @@
     <result name="error">/error.jsp</result>
   </action>
   
+  <action name="fstatementJmpBs" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/bstatement.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="bstatementAdd" class="com.fms.Statement.BstatementAction" method="AddBstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="statementQueryb" class="com.fms.Statement.BstatementAction" method="QueryBstatement">
+    <result name="psuccess">/bsdetail.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="bstatementUdetail" class="com.fms.Statement.BstatementAction" method="GetUserIByUserNumber">
+    <result name="success">/uinformation.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="bstatementUpJBs" class="com.fms.Statement.BstatementAction" method="QueryBstatement">
+    <result name="psuccess">/updatebs.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="bstatementUpdate" class="com.fms.Statement.BstatementAction" method="UpdateBstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="bstatementDelete" class="com.fms.Statement.BstatementAction" method="DeleteBstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
   <action name="fstatementJmpPs" class="com.fms.User.UserAction" method="GetUserP">
     <result name="success">/pstatement.jsp</result>
     <result name="error">/error.jsp</result>
@@ -134,18 +169,13 @@
     <result name="error">/error.jsp</result>
   </action>
   
-  <action name="statementQuery" class="com.fms.Statement.PstatementAction" method="QueryStatement">
+  <action name="statementQueryp" class="com.fms.Statement.PstatementAction" method="QueryPstatement">
     <result name="psuccess">/psdetail.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
   
   <action name="pstatementUdetail" class="com.fms.Statement.PstatementAction" method="GetUserIByUserNumber">
     <result name="success">/uinformation.jsp</result>
-    <result name="error">/error.jsp</result>
-  </action>
-  
-  <action name="pstatementQuery" class="com.fms.Statement.PstatementAction" method="QueryPstatement">
-    <result name="psuccess">/psdetail.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
   
@@ -163,6 +193,8 @@
     <result name="success">/fstatements.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
+  
+
   
 
 
