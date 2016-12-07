@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <input type="submit" value="查询利润表" >
     </form>
     
-    <form action="">
+    <form action="statementQueryc">
     <s:hidden name="userId" value="%{ruser.userId}"/>
     <input type="month" name="fsdate"/>
     <input type="submit" value="查询现金流量表" >
@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <input type="submit" value="新增利润表">
     </form>
     
-    <form action="">
+    <form action="fstatementJmpCs">
     <s:hidden name="userId" value="%{ruser.userId}"/>
     <input type="submit" value="新增现金流量表">
     </form>

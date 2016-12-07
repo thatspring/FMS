@@ -2,6 +2,7 @@ package com.fms.DBaction;
 
 import com.fms.Statement.PstatementClass;
 import com.fms.Statement.BstatementClass;
+import com.fms.Statement.CstatementClass;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -283,4 +284,114 @@ public class StatementOperateDB {
         }
     	return rbstatement;
 	}
+	
+	public boolean AddCstatement(CstatementClass cstatement) throws Exception{
+		boolean result=false;
+    	Connection conn = null;
+		PreparedStatement st = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="insert into cstatement(CstatementId,Cbin,Cbout,Ciin,";
+        	sql+="Ciout,Crin,Crout,CstatementUnumber,CstatementMonth) ";
+        	sql+="value(null,?,?,?,?,?,?,?,?)";
+            st = conn.prepareStatement(sql);
+            st.setString(1, cstatement.getCbin());
+            st.setString(2, cstatement.getCbout());
+            st.setString(3, cstatement.getCiin());
+            st.setString(4, cstatement.getCiout());
+            st.setString(5, cstatement.getCrin());
+            st.setString(6, cstatement.getCrout());
+            st.setString(7, cstatement.getCstatementUnumber());
+            st.setString(8, cstatement.getCstatementMonth());
+            if(st.executeUpdate()==1){
+            	result=true;
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+		return result;		
+	}
+	
+	public boolean UpdateCstatement(CstatementClass cstatement) throws Exception{
+		boolean result=false;
+    	Connection conn = null;
+		PreparedStatement st = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="update cstatement set Cbin=?,Cbout=?,Ciin=?,";
+        	sql+="Ciout=?,Crin=?,Crout=?,CstatementUnumber=?,CstatementMonth=? ";
+        	sql+="where CstatementId=?";
+            st = conn.prepareStatement(sql);
+            st.setString(1, cstatement.getCbin());
+            st.setString(2, cstatement.getCbout());
+            st.setString(3, cstatement.getCiin());
+            st.setString(4, cstatement.getCiout());
+            st.setString(5, cstatement.getCrin());
+            st.setString(6, cstatement.getCrout());
+            st.setString(7, cstatement.getCstatementUnumber());
+            st.setString(8, cstatement.getCstatementMonth());
+            st.setInt(9, cstatement.getCstatementId());
+            if(st.executeUpdate()==1){
+            	result=true;
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+		return result;
+	}
+	
+	public boolean DeleteCstatement(int cstatementId) throws Exception{
+        boolean result=false;
+    	Connection conn = null;
+		PreparedStatement st = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="delete from cstatement where CstatementId=?";
+            st = conn.prepareStatement(sql);
+            st.setInt(1, cstatementId);
+            if (st.executeUpdate()==1){
+                result=true;
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    	return result;	
+	}
+	
+	public CstatementClass QueryCstatement(String str) throws Exception{
+		CstatementClass rcstatement = new CstatementClass();
+    	Connection conn = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+        try{
+        	conn=DBconnection.Conn();
+    		String sql="select * from cstatement where CstatementMonth=?";
+            st = conn.prepareStatement(sql);
+            st.setString(1, str);
+            rs=st.executeQuery();
+            if(rs.next()){
+            	rcstatement.setCstatementId(rs.getInt("CstatementId"));
+            	rcstatement.setCbin(rs.getString("Cbin"));
+            	rcstatement.setCbout(rs.getString("Cbout"));
+            	rcstatement.setCiin(rs.getString("Ciin"));
+            	rcstatement.setCiout(rs.getString("Ciout"));
+            	rcstatement.setCrin(rs.getString("Crin"));
+            	rcstatement.setCrout(rs.getString("Crout"));
+            	rcstatement.setCstatementUnumber(rs.getString("CstatementUnumber"));
+            	rcstatement.setCstatementMonth(rs.getString("CstatementMonth"));
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    	return rcstatement;
+	}
+
 }

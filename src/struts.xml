@@ -194,9 +194,42 @@
     <result name="error">/error.jsp</result>
   </action>
   
-
+  <action name="fstatementJmpCs" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/cstatement.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
   
+  <action name="cstatementAdd" class="com.fms.Statement.CstatementAction" method="AddCstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
 
+  <action name="statementQueryc" class="com.fms.Statement.CstatementAction" method="QueryCstatement">
+    <result name="psuccess">/csdetail.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+
+  <action name="cstatementUdetail" class="com.fms.Statement.CstatementAction" method="GetUserIByUserNumber">
+    <result name="success">/uinformation.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="cstatementUpJCs" class="com.fms.Statement.CstatementAction" method="QueryCstatement">
+    <result name="psuccess">/updatecs.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="cstatementUpdate" class="com.fms.Statement.CstatementAction" method="UpdateCstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+ <action name="cstatementDelete" class="com.fms.Statement.CstatementAction" method="DeleteCstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  
 
   <action name="userSalary" class="com.fms.User.UserAction" method="GetUserP">
     <result name="success">/salary.jsp</result>

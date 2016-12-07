@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <div><img src="picture/fbstatement.png" alt=""></div>
    <s:hidden name="userId" value="%{ruser.userId}"/></span>
    <table>
-    <th>项目</th><th>本月金额</th><th>累计金额</th>
+    <th>项目</th><th>年初金额</th><th>本季金额</th>
     <tr>
      <td>报表编制日期：</td>
      <td><s:property value="bstatement.BstatementMonth"></s:property></td>

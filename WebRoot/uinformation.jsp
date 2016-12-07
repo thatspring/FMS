@@ -43,5 +43,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <a href="statementQueryp.action?fsdate=<s:property value="pstatement.PstatementDate"/>
    &userId=<s:property value="ruser.userId"/>">返回</a><br>
     </s:elseif>
+    <s:elseif test="%{cstatement.CstatementMonth!=null}">
+    <a href="statementQueryc.action?fsdate=<s:property value="cstatement.CstatementMonth"/>
+   &userId=<s:property value="ruser.userId"/>">返回</a><br>
+    </s:elseif>
   </body>
 </html>
