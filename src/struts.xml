@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-<package name="default" extends="struts-default">
+<package name="default" extends="json-default">
 
   <action name="userLogin" class="com.fms.User.UserAction" method="LoginUser">
     <result name="success">/homepage.jsp</result>
@@ -254,6 +254,16 @@
   <action name="employeeDelete" class="com.fms.Salary.SalaryAction" method="DeleteEmployee">
     <result name="success">/salary.jsp</result>
     <result name="error">/error.jsp</result>
+  </action>
+  
+  
+  <action name="userJson" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/json.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="ajaxAction" class="com.fms.Json.JsonAction" method="execute">
+    <result type="json"/>
   </action>
   
 </package>

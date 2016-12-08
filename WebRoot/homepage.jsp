@@ -69,7 +69,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<input type="button" id="Button" value="记账功能" 
   		onclick="location.href='userAccount.action?userId=<s:property value="ruser.userId"/>'"> 
   	<input type="button" id="Button" value="流水功能" 
-  		onclick="location.href=''"> 
+  		onclick="location.href='userJson.action?userId=<s:property value="ruser.userId"/>'"> 
   	<input type="button" id="Button" value="发票编辑" 
   		onclick="location.href='userInvoice.action?userId=<s:property value="ruser.userId"/>'"> 
   	<input type="button" id="Button" value="报表编辑" 
