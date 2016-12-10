@@ -279,6 +279,13 @@
     <result type="json"/>
   </action>
   
+  <action name="taxAction2" class="com.fms.Json.TaxAction" method="execute2">
+    <result type="json"/>
+  </action>
+  
+  <action name="taxAction3" class="com.fms.Json.TaxAction" method="execute3">
+    <result type="json"/>
+  </action>
   
 </package>
 </struts>    

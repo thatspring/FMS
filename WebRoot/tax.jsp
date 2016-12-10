@@ -42,6 +42,34 @@ $(document).ready(function() {
 			}
 		});
 	});
+	$("#atnAjax").click(function() {
+		var taxClass = $("#taxClass").val().trim();
+		var moneyTax = $("#moneyTax").val().trim();
+		var userdate = $("#userdate").val().trim();
+		$.ajax({
+			type : "POST",
+			url : "taxAction2",
+			data:{taxClass:taxClass,moneyTax:moneyTax,userdate:userdate},
+			dataType : "text",
+			success : function(data) {
+				alert("添加成功，请到记账功能查询！")
+			}
+		});
+	});
+	$("#ctnAjax").click(function() {
+		var tax_cf = $("#tax_cf").val().trim();
+		var moneyTax1 = $("#moneyTax1").val().trim();
+		var userdate1 = $("#userdate1").val().trim();
+		$.ajax({
+			type : "POST",
+			url : "taxAction3",
+			data:{tax_cf:tax_cf,moneyTax1:moneyTax1,userdate1:userdate1},
+			dataType : "text",
+			success : function(data) {
+				alert("添加成功，请到记账功能查询！")
+			}
+		});
+	});
 });
 </script>
   </head>
@@ -51,7 +79,7 @@ $(document).ready(function() {
       <p>如果选择其它税种计算税率，请在计算公式一栏输入“金额*{税率}”!(例如：金额*15%)</p>
       <table>
        <tr>
-        <th>税种</th><th>计算公式</th><th>金额</th><th>应交金额</th><th>操作</th>
+        <th>税种</th><th>计算公式</th><th>金额</th><th>应交金额</th><th>操作</th><th>日期</th><th>添加</th>
        </tr>
        <tr>
         <td>
@@ -68,6 +96,8 @@ $(document).ready(function() {
         <td><input type="text" id="moneyTax"></td>
         <td><div id="rtaxMoneyText"></td>
         <td><input type="button" id="btnAjax" value="查询" /></td>
+        <td><input type="date" id="userdate"/></td>
+        <td><input type="button" id="atnAjax" value="添加到账目" /></td>
        </tr>
        <tr>
         <td>其他税种</td> 
@@ -75,9 +105,23 @@ $(document).ready(function() {
         <td><input type="text" id="moneyTax1"></td>
         <td><div id="rtaxMoneyText1"></td>
         <td><input type="button" id="stnAjax" value="查询" /></td>
+        <td><input type="date" id="userdate1"/></td>
+        <td><input type="button" id="ctnAjax" value="添加到账目" /></td>
        </tr>
       </table>
      </div>
      <a href="rebackhome.action?userId=<s:property value="ruser.userId"/>">返回</a>
+     <p>注：添加到账目时：</p> 
+     <table>
+      <tr>
+       <th>项目</th><th>税种</th>
+      </tr>
+      <tr><td>增值税：</td><td>:Tax#01</td>
+      <tr><td>所得税：</td><td>:Tax#02</td></tr>
+      <tr><td>营业税：</td><td>:Tax#03</td></tr>
+      <tr><td>消费税：</td><td>:Tax#04</td></tr>
+      <tr><td>城建税：</td><td>:Tax#05</td></tr>
+      <tr><td>其他税：</td><td>:Tax#06</td></tr>
+     </table>
   </body>
 </html>
