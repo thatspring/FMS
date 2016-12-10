@@ -266,5 +266,19 @@
     <result type="json"/>
   </action>
   
+  <action name="userTax" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/tax.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="taxAction0" class="com.fms.Json.TaxAction" method="execute0">
+    <result type="json"/>
+  </action>
+  
+  <action name="taxAction1" class="com.fms.Json.TaxAction" method="execute1">
+    <result type="json"/>
+  </action>
+  
+  
 </package>
 </struts>    

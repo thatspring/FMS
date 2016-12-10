@@ -104,6 +104,7 @@ $(document).ready(function() {
        <input type="button" id="btnAjax" value="查询" />
      </div><br/>
      <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
-     </div>
+     </div><br/>
+     <a href="rebackhome.action?userId=<s:property value="ruser.userId"/>">返回</a>
   </body>
 </html>

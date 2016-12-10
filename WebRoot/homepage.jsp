@@ -75,7 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<input type="button" id="Button" value="报表编辑" 
   		onclick="location.href='userFstatements.action?userId=<s:property value="ruser.userId"/>'"> 
   	<input type="button" id="Button" value="税率计算" 
-  		onclick="location.href=''">
+  		onclick="location.href='userTax.action?userId=<s:property value="ruser.userId"/>'">
   	<input type="button" id="Button" value="工资发放" 
   		onclick="location.href='userSalary.action?userId=<s:property value="ruser.userId"/>'">
   </div>
