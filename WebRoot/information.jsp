@@ -84,7 +84,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		border:1px solid #E8E8E8;
     	}
     	#info_panel #right_panel{
-    		border-radius: 3px;
+    		border-radius: 5px;
     		width:86.5%; 
 			float:right;
 			height:100%;
@@ -96,7 +96,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		padding-top:2%;
     		font-size:30px;
     		border-bottom:2px solid #E6E6FA;
-    		padding-left:3%;
+    		padding-left:5%;
+    	}
+    	#info_panel #right_panel #content{
+    		width:70%;
+    		padding-top:1%;
+    		padding-left:8%;
+    	}
+    	#info_panel #right_panel #content #label{
+    		border:0px;
+    		width:20%;
+    		height:4%;
+    		padding-top:1.5%;
+    	}
+    	#info_panel #right_panel #content #label input{
+    		font-size:22px;
+    		border:0px;
+    	}
+    	#info_panel #right_panel #content #s_con{
+    		border:2px solid #E6E6FA;
+    		background-color:#F0F0F0;
+    		border-radius: 5px;
+    		font-size:22px;
+    		width:30%;
+    		height:4%;
     	}
 	</style>
   </head>
@@ -138,23 +161,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		<div id="head">
 			<h3>个人详细信息</h3><br>
 		</div>
-		<div>
-		<input value="用户ID">
-    	<s:property value="ruser.userNumber"/><br>
-    	<input value="真实姓名">
-    	<s:property value="ruser.userTruename"/><br>
-    	<input value="所在部门">
-    	<s:property value="ruser.userDepartment"/><br>
-    	<input value="现任职务">
-    	<s:property value="ruser.userPost"/><br>
-    	<input value="办公电话">
-    	<s:property value="ruser.userPhone"/><br>
-    	<input value="手机号码">
-    	<s:property value="ruser.userIphone"/><br>
-    	<input value="电子邮箱">
-    	<s:property value="ruser.userEmail"/><br>
+		<div id="content">
+		<div id="label"><input value="用户ID"></div>
+    	<div id="s_con"><s:property value="ruser.userNumber"/></div>
+    	<div id="label"><input value="真实姓名"></div>
+    	<div id="s_con"><s:property value="ruser.userTruename"/></div>
+    	<div id="label"><input value="所在部门"></div>
+    	<div id="s_con"><s:property value="ruser.userDepartment"/></div>
+    	<div id="label"><input value="现任职务"></div>
+    	<div id="s_con"><s:property value="ruser.userPost"/></div>
+    	<div id="label"><input value="办公电话"></div>
+    	<div id="s_con"><s:property value="ruser.userPhone"/></div>
+    	<div id="label"><input value="手机号码"></div>
+    	<div id="s_con"><s:property value="ruser.userIphone"/></div>
+    	<div id="label"><input value="电子邮箱"></div>
+    	<div id="s_con"><s:property value="ruser.userEmail"/></div>
     	</div>
+    	<!-- 
     	<a href="rebackhome.action?userId=<s:property value="ruser.userId"/>">返回</a>
+    	 -->
     </div>
   </div>
   
