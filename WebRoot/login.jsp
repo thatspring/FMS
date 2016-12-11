@@ -70,17 +70,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-<<<<<<< HEAD
-  <!--  
-  	<div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;opacity: 0.4;">
-		<img src="source/image/login_bg.jpg" height="100%" width="100%"/>
-	</div>
-  -->
-=======
+
   	<div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;opacity: 1;">
 		<img src="source/image/login_bg.jpg" height="100%" width="100%"/>
 	</div>
->>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
     <div class="begin">
   	 <div class="insert_img">
   	 	<img src="source/image/login.png">
@@ -88,11 +81,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="l_form">
      <div class="split"></div>
      <div class="login_form">
-<<<<<<< HEAD
-     <h2>登陆</h2><br/>
-=======
      <h2 style="color:#ffffff">登陆</h2><br/>
->>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
      <form action="userLogin"> 
     	<div class="easyui-panel" style="width:400px;padding:50px 60px;">
     		<span>用户名：</span>

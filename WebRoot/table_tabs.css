@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+.easyui-tabs .date{
+			
+	border:1px solid #33CCCC;
+}
+.easyui-tabs .Button{
+	border-radius:3px;
+	border:1px solid #33CCCC;
+	height:23px;
+	background-color:	#F0FFFF;
+}
+.table_panel{
+	 width:100%;
+	 height:90%;
+	 background-color:#FFFFFF;
+	 text-align:center;
+}

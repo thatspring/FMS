@@ -44,7 +44,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <tr>
      <td>项目类型：</td>
      <td><s:textfield name="invoice.invoiceProject" value="%{invoice.invoiceProject}"/></td>
-    </tr
+    </tr>
     <tr>
      <td>金额：</td>
      <td><s:textfield name="invoice.invoiceMoney" value="%{invoice.invoiceMoney}"/></td>
@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <tr>
      <td>备注：</td>
      <td><s:textfield name="invoice.invoiceRemarks" value="%{invoice.invoiceRemarks}"/></td>
-    </tr
+    </tr>
     <tr>
      <td>审核人：</td>
      <td><s:textfield name="invoice.invoiceUnumber" value="%{invoice.invoiceUnumber}"/></td>

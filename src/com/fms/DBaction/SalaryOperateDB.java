@@ -7,10 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
-import java.sql.Date;
-=======
->>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
+
+
 
 public class SalaryOperateDB {
 
@@ -98,8 +96,5 @@ public class SalaryOperateDB {
     	return result;
     }
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
+

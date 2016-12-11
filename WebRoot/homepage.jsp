@@ -36,17 +36,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		padding: 0px;/*无内边距*/
     		cursor: pointer;
     		background-color:	#F0FFFF;/*按钮的背景颜色*/
-<<<<<<< HEAD
-    		width: 220px;/*按钮的宽度*/
-    		margin: 0px auto;
-    		margin-top: 3%;
-    		opacity:0.7;
-=======
     		width: 15%;/*按钮的宽度*/
     		margin: 0px auto;
     		margin-top: 3%;
     		opacity:0.8;
->>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
 		}
 		.function input:hover{
 			border:2px solid #00008B;
@@ -67,29 +60,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       	<div class="info">
       		你好！
       		<s:property value="ruser.userName"/>
-<<<<<<< HEAD
-      		<a href="userPlay.action?userId=<s:property value="ruser.userId"/>">[个人中心]</a>
-      		<a href="login.jsp">[退出登录]</a>
-=======
       		<a href="userPlay.action?userId=<s:property value="ruser.userId"/>" style="text-decoration:none;">[个人中心]</a>
       		<a href="login.jsp" style="text-decoration:none;">[退出登录]</a>
->>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
       	</div>
       </div>
   </div>
   <div class="function">
   	<input type="button" id="Button" value="记账功能" 
   		onclick="location.href='userAccount.action?userId=<s:property value="ruser.userId"/>'"> 
-  	<input type="button" id="Button" value="流水功能" 
-<<<<<<< HEAD
-  		onclick="location.href=''"> 
-  	<input type="button" id="Button" value="发票编辑" 
-  		onclick="location.href=''"> 
-  	<input type="button" id="Button" value="报表编辑" 
-  		onclick="location.href=''"> 
-  	<input type="button" id="Button" value="税率计算" 
-  		onclick="location.href=''">
-=======
+  	<input type="button" id="Button" value="流水功能"
   		onclick="location.href='userJson.action?userId=<s:property value="ruser.userId"/>'"> 
   	<input type="button" id="Button" value="发票编辑" 
   		onclick="location.href='userInvoice.action?userId=<s:property value="ruser.userId"/>'"> 
@@ -97,7 +76,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   		onclick="location.href='userFstatements.action?userId=<s:property value="ruser.userId"/>'"> 
   	<input type="button" id="Button" value="税率计算" 
   		onclick="location.href='userTax.action?userId=<s:property value="ruser.userId"/>'">
->>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
   	<input type="button" id="Button" value="工资发放" 
   		onclick="location.href='userSalary.action?userId=<s:property value="ruser.userId"/>'">
   </div>

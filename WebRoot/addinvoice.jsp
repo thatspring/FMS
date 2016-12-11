@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <tr>
      <td>备注：</td>
      <td><input type="text" name="invoice.invoiceRemarks"/></td>
-    </tr
+    </tr>
     <tr>
      <td>审核人：</td>
      <td><input type="text" name="invoice.invoiceUnumber"/></td>

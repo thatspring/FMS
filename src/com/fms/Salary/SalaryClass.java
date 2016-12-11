@@ -1,29 +1,16 @@
 package com.fms.Salary;
 
-<<<<<<< HEAD
-import java.sql.Date;
+
 public class SalaryClass {
-	private String employeeID;   //Ô±¹¤ID
-	private String employeeName;  //Ô±¹¤ÐÕÃû
-	private int workingtime;     //¹¤×÷Ê±³¤
-	private int leavetime;       //Çë¼ÙÊ±³¤
-	private float salarylevel;   //¹¤×Ê/ÈÕ
-	private float grosspay;      //Ó¦¸¶¹¤×Ê
-	private float cutpayment;    //¿Û¿î
-	private float fsalary;       //Êµ¸¶¹¤×Ê
-	private boolean checkflag;   //ÁìÈ¡È·ÈÏ
-=======
-public class SalaryClass {
-	private String employeeID;   //å‘˜å·¥ID
-	private String employeeName;  //å‘˜å·¥å§“å
-	private int workingtime;     //å·¥ä½œæ—¶é•¿
-	private int leavetime;       //è¯·å‡æ—¶é•¿
-	private float salarylevel;   //å·¥èµ„/æ—¥
-	private float grosspay;      //åº”ä»˜å·¥èµ„
-	private float cutpayment;    //æ‰£æ¬¾
-	private float fsalary;       //å®žä»˜å·¥èµ„
-	private boolean checkflag;   //é¢†å–ç¡®è®¤
->>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
+	private String employeeID;
+	private String employeeName;
+	private int workingtime;
+	private int leavetime;
+	private float salarylevel;
+	private float grosspay;
+	private float cutpayment;
+	private float fsalary;       
+	private boolean checkflag;
 	private String salarydate;
 	
 	public String getEmployeeID() {
@@ -89,20 +76,9 @@ public class SalaryClass {
 		this.checkflag = checkflag;
 	}
 	public String getSalarydate() {
-<<<<<<< HEAD
-		System.out.println(salarydate);
-		return salarydate;
-	}
-	public void setSalarydate(String salarydate) {
-		
-		this.salarydate = salarydate;
-	}
-}
-=======
 		return salarydate;
 	}
 	public void setSalarydate(String salarydate) {
 		this.salarydate = salarydate;
 	}
 }
->>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
