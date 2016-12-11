@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
@@ -95,3 +96,296 @@
   </action>
 </package>
 </struts>    
+=======
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="default" extends="json-default">
+
+  <action name="userLogin" class="com.fms.User.UserAction" method="LoginUser">
+    <result name="success">/homepage.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="userRegister" class="com.fms.User.UserAction" method="RegisterUser">
+    <result name="success">/login.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+    
+  <action name="userPlay" class="com.fms.User.UserAction" method="GetUserI">
+    <result name="success">/information.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="userEditP" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/changeuser.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="userEditI" class="com.fms.User.UserAction" method="GetUserI">
+    <result name="success">/changeuser.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="userChangeP" class="com.fms.User.UserAction" method="ChangeUserP">
+    <result name="success">/information.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="userChangeI" class="com.fms.User.UserAction" method="ChangeUserI">
+    <result name="success">/information.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="rebackhome" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/homepage.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+
+
+
+  <action name="userAccount" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/accounting.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="accountJmpA" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/addaccount.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="accountAdd" class="com.fms.Account.AccountAction" method="AddAccount">
+    <result name="success">/accounting.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="accountQuery" class="com.fms.Account.AccountAction" method="QueryAccount">
+    <result name="success">/listaccount.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="accountDelete" class="com.fms.Account.AccountAction" method="DeleteAccount">
+    <result name="success">/accounting.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+
+
+
+  <action name="userInvoice" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/invoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceJmpI" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/addinvoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceAdd" class="com.fms.Invoice.InvoiceAction" method="AddInvoice">
+    <result name="success">/invoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceQueryByDate" class="com.fms.Invoice.InvoiceAction" method="QueryInvoiceByDate">
+    <result name="success">/listinvoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceDetail" class="com.fms.Invoice.InvoiceAction" method="QueryInvoiceById">
+    <result name="success">/invoicedetail.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceUdetail" class="com.fms.Invoice.InvoiceAction" method="GetUserIByUserNumber">
+    <result name="success">/uinformation.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceUpJAi" class="com.fms.Invoice.InvoiceAction" method="QueryInvoiceById">
+    <result name="success">/updateinvoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceUpdate" class="com.fms.Invoice.InvoiceAction" method="UpdateInvoice">
+    <result name="success">/invoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="invoiceDelete" class="com.fms.Invoice.InvoiceAction" method="DeleteInvoice">
+    <result name="success">/invoice.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  
+  
+  <action name="userFstatements" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="fstatementJmpBs" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/bstatement.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="bstatementAdd" class="com.fms.Statement.BstatementAction" method="AddBstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="statementQueryb" class="com.fms.Statement.BstatementAction" method="QueryBstatement">
+    <result name="psuccess">/bsdetail.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="bstatementUdetail" class="com.fms.Statement.BstatementAction" method="GetUserIByUserNumber">
+    <result name="success">/uinformation.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="bstatementUpJBs" class="com.fms.Statement.BstatementAction" method="QueryBstatement">
+    <result name="psuccess">/updatebs.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="bstatementUpdate" class="com.fms.Statement.BstatementAction" method="UpdateBstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="bstatementDelete" class="com.fms.Statement.BstatementAction" method="DeleteBstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="fstatementJmpPs" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/pstatement.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="pstatementAdd" class="com.fms.Statement.PstatementAction" method="AddPstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="statementQueryp" class="com.fms.Statement.PstatementAction" method="QueryPstatement">
+    <result name="psuccess">/psdetail.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="pstatementUdetail" class="com.fms.Statement.PstatementAction" method="GetUserIByUserNumber">
+    <result name="success">/uinformation.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="pstatementUpJPs" class="com.fms.Statement.PstatementAction" method="QueryPstatement">
+    <result name="psuccess">/updateps.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="pstatementUpdate" class="com.fms.Statement.PstatementAction" method="UpdatePstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+ <action name="pstatementDelete" class="com.fms.Statement.PstatementAction" method="DeletePstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="fstatementJmpCs" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/cstatement.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="cstatementAdd" class="com.fms.Statement.CstatementAction" method="AddCstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+
+  <action name="statementQueryc" class="com.fms.Statement.CstatementAction" method="QueryCstatement">
+    <result name="psuccess">/csdetail.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+
+  <action name="cstatementUdetail" class="com.fms.Statement.CstatementAction" method="GetUserIByUserNumber">
+    <result name="success">/uinformation.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="cstatementUpJCs" class="com.fms.Statement.CstatementAction" method="QueryCstatement">
+    <result name="psuccess">/updatecs.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="cstatementUpdate" class="com.fms.Statement.CstatementAction" method="UpdateCstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+ <action name="cstatementDelete" class="com.fms.Statement.CstatementAction" method="DeleteCstatement">
+    <result name="success">/fstatements.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  
+
+  <action name="userSalary" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/salary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="employeeJmpA" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/addsalary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="employeeAdd" class="com.fms.Salary.SalaryAction" method="AddEmployee">
+    <result name="success">/salary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="employeeQuery" class="com.fms.Salary.SalaryAction" method="QueryEmployee">
+    <result name="success">/listsalary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="employeeDelete" class="com.fms.Salary.SalaryAction" method="DeleteEmployee">
+    <result name="success">/salary.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  
+  <action name="userJson" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/json.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="ajaxAction" class="com.fms.Json.JsonAction" method="execute">
+    <result type="json"/>
+  </action>
+  
+  <action name="userTax" class="com.fms.User.UserAction" method="GetUserP">
+    <result name="success">/tax.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="taxAction0" class="com.fms.Json.TaxAction" method="execute0">
+    <result type="json"/>
+  </action>
+  
+  <action name="taxAction1" class="com.fms.Json.TaxAction" method="execute1">
+    <result type="json"/>
+  </action>
+  
+  <action name="taxAction2" class="com.fms.Json.TaxAction" method="execute2">
+    <result type="json"/>
+  </action>
+  
+  <action name="taxAction3" class="com.fms.Json.TaxAction" method="execute3">
+    <result type="json"/>
+  </action>
+  
+</package>
+</struts>    
+>>>>>>> fec6686ec6592ad84b2104f42534eea343a86152

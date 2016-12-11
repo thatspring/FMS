@@ -1,19 +1,30 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<<<<<<< HEAD
 
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+=======
+>>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<<<<<<< HEAD
 
 <!DOCTYPE HTML5>
 <html:html lang="true">
   <head>
     <html:base />
+=======
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE HTML5>
+<html:html lang="true">
+  <head>
+    <base href="<%=basePath%>">
+>>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
     
     <title>工资表</title>
 	<!-- 

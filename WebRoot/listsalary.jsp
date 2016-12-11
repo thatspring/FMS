@@ -3,17 +3,24 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<<<<<<< HEAD
 
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
+=======
+>>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html:html lang="true">
   <head>
+<<<<<<< HEAD
     <html:base />
+=======
+    <base href="<%=basePath%>">
+>>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
     
     <title>listsalary.jsp</title>
 
@@ -44,7 +51,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <td><s:property value="#i.grosspay"/></td>
      <td><s:property value="#i.cutpayment"/></td>
      <td><s:property value="#i.fsalary"/></td>
+<<<<<<< HEAD
      <td><s:property value="#i.checkflag"/></td>
+=======
+     <td>
+     <s:if test="%{#i.checkflag==0}">没有认领</s:if>
+     <s:else>已经认领</s:else>
+     </td>
+>>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
      <td><s:property value="#i.salarydate"/></td>
      <td><a href="employeeDelete.action?employeeID=<s:property value="#i.employeeID"/>
      &userId=<s:property value="ruser.userId"/>">删除</a></td>

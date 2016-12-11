@@ -35,7 +35,6 @@ public class AccountAction {
 		AccountOperateDB aod=new AccountOperateDB();
 		alist=aod.QueryAccount(account);
 		CMoney=CalculationMoney(alist);
-		System.out.println(CMoney);
 		if(alist!=null){
 			return "success";
 		}else{

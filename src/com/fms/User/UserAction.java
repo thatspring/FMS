@@ -3,7 +3,6 @@ package com.fms.User;
 import com.fms.User.UserClass;
 import com.fms.DBaction.UserOperateDB;
 
-
 public class UserAction {
 	private int userId;
     private UserClass user;
@@ -90,5 +89,4 @@ public class UserAction {
 	public void setRuser(UserClass ruser) {
 		this.ruser = ruser;
 	}
-	
 }

@@ -1,5 +1,6 @@
 package com.fms.Salary;
 
+<<<<<<< HEAD
 import java.sql.Date;
 public class SalaryClass {
 	private String employeeID;   //Ա��ID
@@ -11,6 +12,18 @@ public class SalaryClass {
 	private float cutpayment;    //�ۿ�
 	private float fsalary;       //ʵ������
 	private boolean checkflag;   //��ȡȷ��
+=======
+public class SalaryClass {
+	private String employeeID;   //员工ID
+	private String employeeName;  //员工姓名
+	private int workingtime;     //工作时长
+	private int leavetime;       //请假时长
+	private float salarylevel;   //工资/日
+	private float grosspay;      //应付工资
+	private float cutpayment;    //扣款
+	private float fsalary;       //实付工资
+	private boolean checkflag;   //领取确认
+>>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
 	private String salarydate;
 	
 	public String getEmployeeID() {
@@ -76,6 +89,7 @@ public class SalaryClass {
 		this.checkflag = checkflag;
 	}
 	public String getSalarydate() {
+<<<<<<< HEAD
 		System.out.println(salarydate);
 		return salarydate;
 	}
@@ -84,3 +98,11 @@ public class SalaryClass {
 		this.salarydate = salarydate;
 	}
 }
+=======
+		return salarydate;
+	}
+	public void setSalarydate(String salarydate) {
+		this.salarydate = salarydate;
+	}
+}
+>>>>>>> fec6686ec6592ad84b2104f42534eea343a86152

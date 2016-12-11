@@ -20,6 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+<<<<<<< HEAD
 	<link type="text/css" rel="stylesheet" href="header.css"/> 
 	
 	<style>
@@ -122,6 +123,39 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		height:4%;
     	}
 	</style>
+=======
+
+  <s:if test="%{ruser.userNumber==null}">
+    <title>My JSP 'change.jsp' starting page</title>
+    <body>
+     <h2>更改密码</h2>
+     <form action="userChangeP">
+     <s:hidden name="ruser.userId" value="%{ruser.userId}"/>
+     <span>密码：<s:textfield name="ruser.userPass" value="%{ruser.userPass}"/></span><br>
+     <input type="submit" value="修改"/>
+     </form>
+     <a href="userPlay.action?userId=<s:property value="ruser.userId"/>">返回</a>
+    </body>
+  </s:if>
+  <s:else>
+    <title>My JSP 'change.jsp' starting page</title>
+    <body>
+     <h2>更改信息</h2>
+     <form action="userChangeI">
+     <s:hidden name="ruser.userId" value="%{ruser.userId}"/>
+     <span>用户代码：<s:property value="%{ruser.userNumber}"/></span><br>
+     <span>用户真实姓名：<s:textfield name="ruser.userTruename" value="%{ruser.userTruename}"/></span><br>
+     <span>用户所在部门：<s:textfield name="ruser.userDepartment" value="%{ruser.userDepartment}"/></span><br>
+     <span>用户现任职务：<s:textfield name="ruser.userPost" value="%{ruser.userPost}"/></span><br>
+     <span>用户办公电话：<s:textfield name="ruser.userPhone" value="%{ruser.userPhone}"/></span><br>
+     <span>用户手机号码：<s:textfield name="ruser.userIphone" value="%{ruser.userIphone}"/></span><br>
+     <span>用户电子邮件：<s:textfield name="ruser.userEmail" value="%{ruser.userEmail}"/></span><br>
+     <input type="submit" value="修改"/>
+     </form>
+     <a href="userPlay.action?userId=<s:property value="ruser.userId"/>">返回</a>
+    </body>
+  </s:else>
+>>>>>>> fec6686ec6592ad84b2104f42534eea343a86152
   </head>
   
   <body>

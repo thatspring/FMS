@@ -202,4 +202,33 @@ public class UserOperateDB extends DBconnection {
         }
     	return r_userId;
     }
+    
+    public UserClass QueryUserIByUserNumber(String userNumber) throws Exception{
+    	UserClass r_user = new UserClass();
+    	Connection conn = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+        try{
+        	conn=DBconnection.Conn();
+        	String sql="select * from useri where userNumber=?";
+            st = conn.prepareStatement(sql);
+            st.setString(1, userNumber);
+            rs=st.executeQuery();
+            if(rs.next()){
+            	r_user.setUserId(rs.getInt("userId"));
+            	r_user.setUserNumber(userNumber);
+            	r_user.setUserTruename(rs.getString("userTruename"));
+            	r_user.setUserDepartment(rs.getString("userDepartment"));
+            	r_user.setUserPost(rs.getString("userPost"));
+            	r_user.setUserPhone(rs.getString("userPhone"));
+            	r_user.setUserIphone(rs.getString("userIphone"));
+            	r_user.setUserEmail(rs.getString("userEmail"));
+            }
+            st.close();
+            conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    	return r_user;
+    }
 }
