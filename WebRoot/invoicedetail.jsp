@@ -19,9 +19,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/jquery.PrintArea.js"></script>
+<script type="text/javascript">
+$(function() {
+	$("#btnAjax").click(function() {
+		 $("#print").printArea();
+	});
+});
+</script>
   </head>
+   <body>
    <h3>你好！<s:property value="ruser.userName"/></h3>
+   <div id="print">
    <div><img src="picture/invoice.png" alt=""></div>
    <table>
     <tr>
@@ -69,9 +79,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <td><s:property value="invoice.invoiceType"/></td>
     </tr>
    </table>
+   </div>
+   <input type="button" id="btnAjax" value="打印"/>
    <a href="invoiceQueryByDate.action?invoice.invoiceDate=<s:property value="invoice.invoiceDate"/>
    &userId=<s:property value="ruser.userId"/>">返回</a><br>
-  <body>
-    
   </body>
 </html>
