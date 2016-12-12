@@ -12,7 +12,24 @@
 }
 .table_panel{
 	 width:100%;
-	 height:90%;
+	 height:95%;
 	 background-color:#FFFFFF;
-	 text-align:center;
+}
+
+table.s1{
+ 			border-top:1px solid #333333;
+ 			border-left:1px solid #333333;
+ 			border-right:none;
+ 			border-bottom:none;
+}
+td{
+			border-top:nooe;
+ 			border-left:none;
+ 			border-right:1px solid #333333;
+ 			border-bottom:1px solid #333333;
+ 			text-align:center;
+}
+
+td input{
+	border:0px;
 }
