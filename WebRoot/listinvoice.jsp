@@ -21,6 +21,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<link type="text/css" rel="stylesheet" href="header.css"/> 
 	<link type="text/css" rel="stylesheet" href="invoicecss.css"/>
+	<style type="text/css">
+		table{
+ 			border-top:1px solid #1ca3e3;
+ 			border-left:1px solid #1ca3e3;
+ 			border-right:none;
+ 			border-bottom:none;
+ 			margin-top:20px;
+ 			margin-left:220px;
+		}
+		table td{
+			border-top:nooe;
+ 			border-left:none;
+ 			border-right:1px solid #1ca3e3;
+ 			border-bottom:1px solid #1ca3e3;
+		}
+	</style>
   </head>
   
   <body>
@@ -64,17 +80,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     			</tr>
     			<s:iterator id="i" value="ilist">
     				<tr>
-     					<td width="300px">
+     					<td width="300px" height="50px">
      						<a href="invoiceDetail.action?invoiceId=<s:property value="#i.invoiceId"/>
      							&userId=<s:property value="ruser.userId"/>">
      							<s:property value="#i.invoiceId"/>
      						</a>
      					</td>
-     					<td width="200px"><s:property value="#i.invoiceDate"/></td>
-     					<td width="150px"><a href="invoiceUdetail.action?invoiceId=<s:property value="#i.invoiceId"/>
+     					<td width="200px" height="50px"><s:property value="#i.invoiceDate"/></td>
+     					<td width="150px" height="50px"><a href="invoiceUdetail.action?invoiceId=<s:property value="#i.invoiceId"/>
      						&userId=<s:property value="ruser.userId"/>">
      					<s:property value="#i.invoiceUnumber"/></a></td>
-     					<td width="200px">
+     					<td width="200px" height="50px">
      						<a href="invoiceUpJAi.action?invoiceId=<s:property value="#i.invoiceId"/>
      							&userId=<s:property value="ruser.userId"/>">编辑</a>
          					<a href="invoiceDelete.action?invoiceId=<s:property value="#i.invoiceId"/>
