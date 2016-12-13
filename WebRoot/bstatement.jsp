@@ -26,6 +26,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="source/jquery-easyui-1.5/jquery.easyui.min.js"></script>
 	<link type="text/css" rel="stylesheet" href="header.css"/> 
 	<link type="text/css" rel="stylesheet" href="table_tabs.css"/>
+	<style>
+		td input{
+			border:0px;
+			height:48px;
+			font-size:15px;
+			paddind-left:2px;
+		}
+	</style>
   </head>
   
   <body>

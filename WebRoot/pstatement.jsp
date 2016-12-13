@@ -26,6 +26,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="source/jquery-easyui-1.5/jquery.easyui.min.js"></script>
 	<link type="text/css" rel="stylesheet" href="header.css"/> 
 	<link type="text/css" rel="stylesheet" href="table_tabs.css"/>
+	<style>
+		td input{
+			border:0px;
+			height:48px;
+			font-size:15px;
+			paddind-left:2px;
+			width:300px;
+		}
+	</style>
   </head>
   
   <body>
@@ -47,23 +56,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	    </div>
   	    <div class="panel" style="width:95%;height:93.5%;margin-left:2.5%">
 			<div class="easyui-tabs" style="width:100%;height:100%;">
-				<div title="资产负债表" style="padding-top:1%;width:100%;" class="tabs">
-					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
-						<div class="search" style="width:18%; float:left;">
-							<form action="statementQueryb" >
-								<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
-    							<input type="month" name="fsdate" class="date"/>
-    							<input type="submit" value="查询资产负载表" class="Button" >
-    						</form>
-    					</div>
-    					<div class="add" style="width:82%; float:right;">
-    						<form action="fstatementJmpBs">
-    							<div style="width:10%;height:0;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
-    							<input type="submit" value="新增资产负债表" class="Button">
-    						</form>
-    					</div>
-    				</div>
-				</div>
+				
 				<div title="利润表" style="padding-top:1%;width:100%;" class="tabs">
 					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
 						<div class="search" style="width:17%; float:left;">
@@ -183,6 +176,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    							<input type="submit" value="提交" style="width:100px;height:30px;margin-top:5px;">
    						</form>
 					</div>
+				</div>
+				<div title="资产负债表" style="padding-top:1%;width:100%;" class="tabs">
+					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
+						<div class="search" style="width:18%; float:left;">
+							<form action="statementQueryb" >
+								<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="month" name="fsdate" class="date"/>
+    							<input type="submit" value="查询资产负载表" class="Button" >
+    						</form>
+    					</div>
+    					<div class="add" style="width:82%; float:right;">
+    						<form action="fstatementJmpBs">
+    							<div style="width:10%;height:0;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="submit" value="新增资产负债表" class="Button">
+    						</form>
+    					</div>
+    				</div>
 				</div>
 				<div title="现金流量表" style="padding-top:1%;width:100%;" class="tabs">
 					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">

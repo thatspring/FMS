@@ -26,6 +26,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script type="text/javascript" src="source/jquery-easyui-1.5/jquery.easyui.min.js"></script>
 	<link type="text/css" rel="stylesheet" href="header.css"/> 
 	<link type="text/css" rel="stylesheet" href="table_tabs.css"/>
+	<style>
+		td input{
+			border:0px;
+			height:48px;
+			font-size:15px;
+			paddind-left:2px;
+		}
+	</style>
   </head>
   
   <body>
@@ -64,7 +72,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     					</div>
     				</div>
     				<div class="table_panel">
-						<form action="bstatementAdd">
    							<s:hidden name="userId" value="%{ruser.userId}"/></span>
    							<table cellpadding=0 cellspacing=0 style='border-collapse:collapse;table-layout:fixed;' class="s1">
    								<tr>
@@ -181,12 +188,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     							<tr>
      								<td width="150px">编制人:</td>
      								<td width="150px" colspan="5" style="text-align:left;"><a href="bstatementUdetail.action?bstatement.BstatementMonth=<s:property value="bstatement.BstatementMonth"/>
-     					&userId=<s:property value="ruser.userId"/>">
-     				<s:property value="bstatement.BstatementUnumber"></s:property></a></td>
+     									&userId=<s:property value="ruser.userId"/>">
+     									<s:property value="bstatement.BstatementUnumber"></s:property></a></td>
     							</tr>
    							</table>
-   							<input type="submit" value="提交" style="width:100px;height:30px;margin-top:5px;">
-   						</form>
+   						<a href="bstatementUpJBs.action?fsdate=<s:property value="bstatement.BstatementMonth"/>
+     					&userId=<s:property value="ruser.userId"/>">编辑</a>
+   				<a href="bstatementDelete.action?fsdate=<s:property value="bstatement.bstatementMonth"/>
+   					&BstatementId=<s:property value="bstatement.BstatementId"/>
+   					&userId=<s:property value="ruser.userId"/>">删除</a>
+   				<a href="userFstatements.action?userId=<s:property value="ruser.userId"/>">返回</a>
 					</div>
 				</div>
 				<div title="利润表" style="padding-top:1%;width:100%;" class="tabs">
