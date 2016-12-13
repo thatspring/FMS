@@ -45,18 +45,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       		  </div>
       	  </div>
   	    </div>
-		<div class="panel" style="width:95%;height:93.5%;margin-left:2.5%">
+		<div class="panel" style="width:1450px;height:1000%;margin-left:70px">
 			<div class="easyui-tabs" style="width:100%;height:100%;">
 				<div title="资产负债表" style="padding-top:1%;width:100%;" class="tabs">
-					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
-						<div class="search" style="width:18%; float:left;">
+					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%;display:inline-block">
+						<div class="search" style="width:18%; display:inline-block">
 							<form action="statementQueryb" >
 								<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
     							<input type="month" name="fsdate" class="date"/>
     							<input type="submit" value="查询资产负载表" class="Button" >
     						</form>
     					</div>
-    					<div class="add" style="width:82%; float:right;">
+    					<div class="add" style="width:82%; display:inline-block">
     						<form action="fstatementJmpBs">
     							<div style="width:10%;height:0;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
     							<input type="submit" value="新增资产负债表" class="Button">
@@ -91,10 +91,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     								<td width="150px">期末余额</td>
     							</tr>
     							<tr>
-    								<td width="150px">流动资产</td>
+    								<td width="150px" style="text-align:left">流动资产:</td>
     								<td width="150px"></td>
     								<td width="150px"></td>
-    								<td width="150px">流动负债</td>
+    								<td width="150px" style="text-align:left">流动负债:</td>
     								<td width="150px"></td>
     								<td width="150px"></td>
     							</tr>
@@ -123,6 +123,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      								<td width="150px"><input type="text" name="bstatement.Bliabilities3"/></td>
     							</tr>
     							<tr>
+     								<td width="150px" style="text-align:left">流动资产合计：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+     								<td width="150px" style="text-align:left">流动负债合计：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px" style="text-align:left">固定资产：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+     								<td width="150px" style="text-align:left">所有者权益：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+    							</tr>
+    							<tr>
      								<td width="150px">固定资产原产值</td>
      								<td width="150px"><input type="text" name="ybstatement.Bfixed1"/></td>
      								<td width="150px"><input type="text" name="bstatement.Bfixed1"/></td>
@@ -145,6 +161,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      								<td width="150px">未分配利润</td>
      								<td width="150px"><input type="text" name="ybstatement.Bsurplus3"/></td>
      								<td width="150px"><input type="text" name="bstatement.Bsurplus3"/></td>
+    							</tr>
+    							<tr>
+     								<td width="150px" style="text-align:left">固定资产合计：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+     								<td width="150px" style="text-align:left">所有者权益合计：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px" style="text-align:left">资产合计：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+     								<td width="150px" style="text-align:left">负债及所有者权益：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
     							</tr>
     							<tr>
      								<td width="150px">编制人:</td>
