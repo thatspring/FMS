@@ -151,7 +151,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      								<td width="150px" colspan="5" style="text-align:left;"><input type="text" name="bstatement.BstatementUnumber" style="width:750px;"/></td>
     							</tr>
    							</table>
-   							<input type="submit" value="提交">
+   							<input type="submit" value="提交" style="width:100px;height:30px;margin-top:5px;">
    						</form>
 					</div>
 				</div>
