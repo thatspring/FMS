@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+
+.panel{
+	background-color:#FFFFFF;
+	width:93%;
+	margin-left:3.5%;
+	height:93.5%;
+}
+
+.head{
+	padding-left:2%;
+	padding-top:1%;
+	border-bottom: 2px solid #0080ff;
+}
+
+.head .button{
+	border:1px solid #0080ff;
+	background-color:#fafafa;
+	cursor: pointer;
+	width:50px;
+	height:30px;
+}
+
+.head .date{
+	height:30px;
+	border:1px solid #0080ff;
+	border-radius:1px;
+}
+
+table{
+ 			border-top:1px solid #1ca3e3;
+ 			border-left:1px solid #1ca3e3;
+ 			border-right:none;
+ 			border-bottom:none;
+ 			margin-top:20px;
+ 			margin-left:220px;
+}
+table td{
+			border-top:nooe;
+ 			border-left:none;
+ 			border-right:1px solid #1ca3e3;
+ 			border-bottom:1px solid #1ca3e3;
+ 			text-align:center;
+}

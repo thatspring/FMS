@@ -19,22 +19,43 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<link type="text/css" rel="stylesheet" href="header.css"/> 
+	<link type="text/css" rel="stylesheet" href="invoicecss.css"/>
   </head>
   
   <body>
-    <h3>你好！<s:property value="ruser.userName"/></h3>
-    <form action="invoiceQueryByDate">
-    <s:hidden name="userId" value="%{ruser.userId}"/>
-    <span>请输入日期用于查询你当日的发票</span><br>
-    <input type="date" name="invoice.invoiceDate"/>
-    <input type="submit" value="查询">
-    </form>
+    <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
+		<img src="source/image/homepage_bg.jpg" height="100%" width="100%"/>
+  	</div>
+  	<div class="topbar">
+  		<div class="title">
+  	  		<img alt="" src="source/image/homepage_title.png">
+  	  	</div>
+      	<div class="topbody">
+      		<div class="info">
+      			你好！
+      			<s:property value="ruser.userName"/>
+      			<a href="login.jsp" style="text-decoration:none;">[退出登录]</a>
+      			<a href="rebackhome.action?userId=<s:property value="ruser.userId"/>" style="text-decoration:none;">[返回首页]</a>
+      		</div>
+      	</div>
+  	</div>
+  	<div class="panel">
+  		<div class="head">
+    		<form action="invoiceQueryByDate">
+    			<s:hidden name="userId" value="%{ruser.userId}"/>
+    			<span>请输入日期用于查询你当日的发票</span><br>
+    			<input type="date" name="invoice.invoiceDate" class="date"/>
+    			<input type="submit" value="查询" class="button">
+    		</form>
  
-    <form action="invoiceJmpI">
-    <s:hidden name="userId" value="%{ruser.userId}"/>
-    <input type="submit" value="新增发票">
-    </form>
-    <a href="rebackhome.action?userId=<s:property value="ruser.userId"/>">返回</a>
+    		<form action="invoiceJmpI">
+    			<s:hidden name="userId" value="%{ruser.userId}"/>
+    			<input type="submit" value="新增发票" class="button">
+    		</form>
+    	</div>
+    	<div class="table">
+    	</div>
+    </div>
   </body>
 </html>

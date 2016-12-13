@@ -21,57 +21,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 
   </head>
-   <h3>你好！<s:property value="ruser.userName"/></h3>
-   <div><img src="picture/invoice.png" alt=""></div>
-   <table>
-    <tr>
-     <td>发票代码No：</td>
-     <td><s:property value="invoice.invoiceNumber"/></td>
-    </tr>
-    <tr>
-     <td>发票号码No：</td>
-     <td><s:property value="invoice.invoiceId"/></td>
-    </tr>
-    <tr>
-     <td>开票日期：</td>
-     <td><s:property value="invoice.invoiceDate"/></td>
-    </tr>
-    <tr>
-     <td>付款方：</td>
-     <td><s:property value="invoice.invoicePayer"/></td>
-    </tr>
-    <tr>
-     <td>项目类型：</td>
-     <td><s:property value="invoice.invoiceProject"/></td>
-    </tr>
-    <tr>
-     <td>金额：</td>
-     <td><s:property value="invoice.invoiceMoney"/></td>
-    </tr>
-    <tr>
-     <td>总计：</td>
-     <td><s:property value="invoice.invoiceCmoney"/></td>
-    </tr>
-    <tr>
-     <td>收款方：</td>
-     <td><s:property value="invoice.invoicePayee"/></td>
-    </tr>
-    <tr>
-     <td>备注：</td>
-     <td><s:property value="invoice.invoiceRemarks"/></td>
-    </tr>
-    <tr>
-     <td>审核人：</td>
-     <td><s:property value="invoice.invoiceUnumber"/></td>
-    </tr>
-    <tr>
-     <td>类型：</td>
-     <td><s:property value="invoice.invoiceType"/></td>
-    </tr>
-   </table>
-   <a href="invoiceQueryByDate.action?invoice.invoiceDate=<s:property value="invoice.invoiceDate"/>
-   &userId=<s:property value="ruser.userId"/>">返回</a><br>
+   
   <body>
+  	
     
   </body>
 </html>
