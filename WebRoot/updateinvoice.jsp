@@ -69,9 +69,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		</form>
     	</div>
     	<div class="invoice_panel">
-    		<form action="invoiceAdd">
+    		<form action="invoiceUpdate">
     			<div class="invoice">
    					<s:hidden name="userId" value="%{ruser.userId}"/></span>
+   					<s:hidden name="invoice.invoiceId" value="%{invoice.invoiceId}"/></span>
    					<h1>发票</h1>
    					<table cellpadding=0 cellspacing=0 style='border-collapse:collapse;table-layout:fixed;'>
     					<tr>
