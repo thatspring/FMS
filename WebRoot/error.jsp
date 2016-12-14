@@ -38,9 +38,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   	 <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
-		<img src="source/image/error.jpg" height="100%" width="100%"/>
+		<img src="source/image/homepage_bg.jpg" height="100%" width="100%"/>
   	 </div>
      <div class="error">
+     	<img src="source/image/error.png"/>
      	<input type="button" id="Button" value="返回"
 			onclick="location.href='index.jsp'">
      </div>
