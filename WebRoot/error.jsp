@@ -24,8 +24,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			width:100%;
 			height:100%;
 			text-align:center;
-			padding-left:40%;
-			padding-right:40%;
+			padding-left:auto;
+			padding-right:auto;
+		}
+		.error img{
+			margin-top:300px;
 		}
 		input{
 			display:block;
@@ -34,6 +37,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			border:1px solid #000000;
 			backgorund-color:#ffffff;
 			color:#FFFF00;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:50px;
 		}
 	</style>
   </head>
@@ -44,6 +50,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	 </div>
      <div class="error">
      	<img src="source/image/error.png"/>
+     	<img src="source/image/error1.png"/>
      	<input type="button" id="Button" value="返回"
 			onclick="location.href='index.jsp'">
      </div>
