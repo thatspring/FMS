@@ -31,6 +31,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			margin-right:auto;
 			width:25%;
 			margin-top:300px;
+			border-bottom:3px solid #FFFF00;
+			padding-bottom:10px;
 		}
 		.img img{
 			display:block;
@@ -39,7 +41,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			display:block;
 			width:150px;
 			height:45px;
-			font-size:20px;
+			font-size:25px;
+			font-weight:bold;
 			border:1px solid #ffffff;
 			background-color:#0099FF;
 			border-radius:2px;
