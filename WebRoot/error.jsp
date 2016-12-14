@@ -21,17 +21,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 	<style type="text/css">
 		.error{
-			width:26%;
-			height:20%;
-			padding-top:5%;
+			width:100%;
+			height:100%;
 			text-align:center;
+			padding-left:40%;
+			padding-right:40%;
 		}
 		input{
+			display:block;
 			width:50px;
 			height:30px;
 			border:1px solid #000000;
 			backgorund-color:#ffffff;
-			
+			color:#FFFF00;
 		}
 	</style>
   </head>
