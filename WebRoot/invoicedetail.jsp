@@ -135,7 +135,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    					</table>
    				</div>
    				<a href="invoiceQueryByDate.action?invoice.invoiceDate=<s:property value="invoice.invoiceDate"/>
-   &userId=<s:property value="ruser.userId"/>">返回</a><br>
+   					&userId=<s:property value="ruser.userId"/>">返回</a><br>
     	</div>
     </div>
   </body>

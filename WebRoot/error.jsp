@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'error.jsp' starting page</title>
+    <title>错误页面</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,11 +19,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<style type="text/css">
+		.error{
+			width:26%;
+			height:20%;
+			padding-top:5%;
+			background-color:#ffffff;
+			border:1px solid #000000;
+			text-align:center;
+			border-radius:5px;
+		}
+		input{
+			width:50px;
+			height:30px;
+			border:1px solid #000000;
+			backgorund-color:#ffffff;
+			
+		}
+	</style>
   </head>
   
   <body>
-     <h3>Sorry! 这儿发生了一个错误。</h3>
-     <a href="index.jsp">返回</a>
+  	 <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
+		<img src="source/image/error.jpg" height="100%" width="100%"/>
+  	 </div>
+     <div class="error">
+     	<input type="button" id="Button" value="返回"
+			onclick="location.href='index.jsp'">
+     </div>
   </body>
 </html>
