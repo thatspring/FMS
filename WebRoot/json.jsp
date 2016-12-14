@@ -3,11 +3,11 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
   <head profile="http://gmpg.org/xfn/11">
-    <title>财务管理系统</title>
+    <title>流水功能</title>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <link type="text/css" rel="stylesheet" href="header.css"/> 
         <script src="js/jquery-3.1.1.min.js"></script>
 		<script src="js/Highcharts-5.0.6/code/highcharts.js"></script>
-		<script src="js/Highcharts-5.0.6/code/themes/gray.js" type="text/javascript"></script> 
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#btnAjax").click(function() {
@@ -95,16 +95,88 @@ $(document).ready(function() {
 	});
 });
 </script>
+<style>
+html,body{
+	margin:0px;
+	height:100%;
+}
+#info_panel{
+	background-color:white;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	width:95%;
+	margin:auto;
+	height:92%;
+}
+#info_panel #head{
+    margin-left:3%;
+	margin-top:2%;
+}
+#info_panel #head1{
+	display: inline-block;
+	margin-left:3%;
+	margin-top:1%;
+}
+#info_panel #head1 input{
+	border: 1px solid #95B8E7;
+	height: 30px;
+	border-radius: 5px;
+	font-size:18px;
+}
+#info_panel #head2{
+	display: inline-block;
+	margin-left:3%;
+	margin-top:1%;
+}
+#info_panel #head2 input{
+	background-color: white;
+	border: 1px solid #95B8E7;
+	height: 30px;
+	width:80px;
+    border-radius: 5px;
+    color: #000000;
+    font-size:20px;
+}
+#info_panel #head3{
+	margin-top:1%;
+}
+#info_panel #head2 input:hover{
+	background-color: #95B8E7;
+	color: white;
+}
+#info_panel #container{
+	padding-top:2%;
+	min-width: 90%; 
+	height: 60%; 
+	margin-left:3%;
+	margin-right:3%;
+}
+</style>
+
   </head>
   <body>
-    <h3>你好！<s:property value="ruser.userName"/></h3>
-     <div>
-       <span>请输入月份用于查询收支图</span><br/>
-       <input type="month" id="userMonth"/> 
-       <input type="button" id="btnAjax" value="查询" />
-     </div><br/>
-     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto">
-     </div><br/>
-     <a href="rebackhome.action?userId=<s:property value="ruser.userId"/>">返回</a>
+    <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
+		<img src="source/image/homepage_bg.jpg" height="100%" width="100%"/>
+    </div>
+    <div class="topbar">
+  	 <div class="title">
+  	  <img alt="" src="source/image/homepage_title.png">
+  	 </div>
+     <div class="topbody">
+      <div class="info">
+                     你好！
+       <s:property value="ruser.userName"/>
+       <a href="rebackhome.action?userId=<s:property value="ruser.userId"/>" style="text-decoration:none;">[返回首页]</a>
+       <a href="login.jsp" style="text-decoration:none;">[退出登录]</a>
+      </div>
+     </div>
+    </div>
+    <div id="info_panel">
+       <div id="head"><h2 style="color:#000000">请输入月份用于查询收支图</h2></div>
+       <div id="head1"><input type="month" id="userMonth"/></div>
+       <div id="head2"><input type="button" id="btnAjax" value="查询" /></div>
+       <div id="head3"><hr style="height:3px;border:none;border-top:3px double #95B8E7;" /></div>
+       <div id="container"></div>
+    </div>
   </body>
 </html>

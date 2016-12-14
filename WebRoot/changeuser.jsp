@@ -8,8 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    
-    <title>修改个人信息</title>
+    <title>个人中心</title>
     <!--  
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -126,6 +125,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	    border:0px;
     		font-size:19px;
     	}
+    	#info_panel #right_panel #content #lin{
+    		padding-left: 8%;
+    		padding-top: 2%;
+    		border:0px;
+    		width:33%;
+    		height:8%;
+    	}
+    	#info_panel #right_panel #content #lin input{
+			background-color: white;
+			border: 2px solid #f0f0f0;
+			padding: 0px;
+			height: 30px;
+        	border-radius: 5px;
+        	color: #000000;
+        	font-size:24px;
+    	}
+    	#info_panel #right_panel #content #lin input:hover{
+    	    background-color: #f0f0f0;
+			color: #000fff;
+		}
 	</style>
   </head>
   
@@ -145,6 +164,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       	</div>
       </div>
   </div>
+  <s:if test="%{ruser.userNumber!=null}">
   <div id="info_panel">
   	<nav class="menu" data-pjax id="choice_card">
   		<div id="head">
@@ -169,27 +189,67 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<h3>修改个人信息</h3><br>
 		</div>
 		<div id="content">
-		<div id="label"><input value="用户ID" readonly="true"></div>
+		<form action="userChangeI">
+		<s:hidden name="ruser.userId" value="%{ruser.userId}"/>
+		<div id="label"><input value="用户ID(*不可修改)" readonly="true"></div>
     	<div id="s_con"><s:property value="%{ruser.userNumber}"/></div>
-    	<div id="label"><input value="真实姓名" readonly="true"></div>
+    	<div id="label"><input value="真实姓名(可以修改)" readonly="true"></div>
     	<div id="s_con"><s:textfield name="ruser.userTruename" value="%{ruser.userTruename}"/></div>
-    	<div id="label"><input value="所在部门" readonly="true"></div>
+    	<div id="label"><input value="所在部门(可以修改)" readonly="true"></div>
     	<div id="s_con"><s:textfield name="ruser.userDepartment" value="%{ruser.userDepartment}"/></div>
-    	<div id="label"><input value="现任职务" readonly="true"></div>
+    	<div id="label"><input value="现任职务(可以修改)" readonly="true"></div>
     	<div id="s_con"><s:textfield name="ruser.userPost" value="%{ruser.userPost}"/></div>
-    	<div id="label"><input value="办公电话" readonly="true"></div>
+    	<div id="label"><input value="办公电话(可以修改)" readonly="true"></div>
     	<div id="s_con"><s:textfield name="ruser.userPhone" value="%{ruser.userPhone}"/></div>
-    	<div id="label"><input value="手机号码" readonly="true"></div>
+    	<div id="label"><input value="手机号码(可以修改)" readonly="true"></div>
     	<div id="s_con"><s:textfield name="ruser.userIphone" value="%{ruser.userIphone}"/></div>
-    	<div id="label"><input value="电子邮箱" readonly="true"></div>
+    	<div id="label"><input value="电子邮箱(可以修改)" readonly="true"></div>
     	<div id="s_con"><s:textfield name="ruser.userEmail" value="%{ruser.userEmail}"/></div>
-    	</div>
+    	<div id="lin"><input type="submit" value="确认修改"/></div>
+    	</form>
+        </div>
     	<!-- 
     	<a href="rebackhome.action?userId=<s:property value="ruser.userId"/>">返回</a>
     	 -->
     </div>
   </div>
-  
-    
+  </s:if>
+  <s:else>
+    <div id="info_panel">
+  	<nav class="menu" data-pjax id="choice_card">
+  		<div id="head">
+			<input value="个人设置" disabled="disabled">
+		</div>
+		<div id="choice">
+			<div id="other">
+  				<input type="button" id="Button" value="个人信息" 
+  				onclick="location.href='userPlay.action?userId=<s:property value="ruser.userId"/>'"><br/>
+  			    <input type="button" id="Button" value="修改信息" 
+  				onclick="location.href='userEditI.action?userId=<s:property value="ruser.userId"/>'"><br/>
+  		    </div>
+  		    <div id="info">
+  		    	<input value="修改密码" disabled="disabled"><br/>
+  			</div>
+  		</div>
+  	</nav>
+  	<div id="right_panel">
+  		<div id="head">
+			<h3>修改密码</h3><br>
+		</div>
+		<div id="content">
+		<form action="userChangeP">
+		<s:hidden name="ruser.userId" value="%{ruser.userId}"/>
+    	<div id="label"><input value="密码" readonly="true"></div>
+    	<div id="s_con">
+    	<input type="text" name="ruser.userPass" value="<s:property value='%{ruser.userPass}'/>"/>
+    	<!--<s:textfield name="ruser.userPass" value="%{ruser.userPass}"/>-->
+    	</div>
+    	<div id="lin"><input type="submit" value="确认修改"/></div>
+    	</form>
+        </div>
+    </div>
+    </div>
+  </s:else>
   </body>
+  
 </html>

@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'updateps.jsp' starting page</title>
+    <title>资产及负债表</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,76 +19,207 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<link rel="stylesheet" type="text/css" href="source/jquery-easyui-1.5/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="source/jquery-easyui-1.5/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="source/demo.css">
+	<script type="text/javascript" src="source/jquery-easyui-1.5/jquery.min.js"></script>
+	<script type="text/javascript" src="source/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="header.css"/> 
+	<link type="text/css" rel="stylesheet" href="table_tabs.css"/>
+	<style type="text/css">
+	</style>
   </head>
   
   <body>
-   <h3>你好！<s:property value="ruser.userName"/></h3>
-   <form action="bstatementUpdate">
-   <div><img src="picture/fbstatement.png" alt=""></div>
-   <s:hidden name="userId" value="%{ruser.userId}"/></span>
-   <s:hidden name="bstatement.BstatementId" value="%{bstatement.BstatementId}"/></span>
-   <s:hidden name="bstatement.BstatementMonth" value="%{bstatement.BstatementMonth}"/></span>
-   <table>
-    <tr>
-     <td>报表编制日期：</td>
-     <td><s:property value="%{bstatement.BstatementMonth}"/></td>
-    </tr>
-    <tr>
-     <td>货币资金：</td>
-     <td><s:textfield name="bstatement.Bcurrent1" value="%{bstatement.Bcurrent1}"/></td>
-    </tr>
-    <tr>
-     <td>应收帐款：</td>
-     <td><s:textfield name="bstatement.Bcurrent2" value="%{bstatement.Bcurrent2}"/></td>
-    </tr>
-    <tr>
-     <td>存货：</td>
-     <td><s:textfield name="bstatement.Bcurrent3" value="%{bstatement.Bcurrent3}"/></td>
-    </tr>
-    <tr>
-     <td>固定资产原产值：</td>
-     <td><s:textfield name="bstatement.Bfixed1" value="%{bstatement.Bfixed1}"/></td>
-    </tr>
-    <tr>
-     <td>累计折旧：</td>
-     <td><s:textfield name="bstatement.Bfixed2" value="%{bstatement.Bfixed2}"/></td>
-    </tr>
-    <tr>
-     <td>固定资产净产值：</td>
-     <td><s:textfield name="bstatement.Bfixed3" value="%{bstatement.Bfixed3}"/></td>
-    </tr>
-    <tr>
-     <td>短期负债：</td>
-     <td><s:textfield name="bstatement.Bliabilities1" value="%{bstatement.Bliabilities1}"/></td>
-    </tr>
-    <tr>
-     <td>应付帐款：</td>
-     <td><s:textfield name="bstatement.Bliabilities2" value="%{bstatement.Bliabilities2}"/></td>
-    </tr>
-    <tr>
-     <td>应交税金：</td>
-     <td><s:textfield name="bstatement.Bliabilities3" value="%{bstatement.Bliabilities3}"/></td>
-    </tr>
-    <tr>
-     <td>实收资本：</td>
-     <td><s:textfield name="bstatement.Bsurplus1" value="%{bstatement.Bsurplus1}"/></td>
-    </tr>
-    <tr>
-     <td>盈余公积：</td>
-     <td><s:textfield name="bstatement.Bsurplus2" value="%{bstatement.Bsurplus2}"/></td>
-    </tr>
-    <tr>
-     <td>未分配利润：</td>
-     <td><s:textfield name="bstatement.Bsurplus3" value="%{bstatement.Bsurplus3}"/></td>
-    </tr>
-    <tr>
-     <td>编制人：</td>
-     <td><s:textfield name="bstatement.BstatementUnumber" value="%{bstatement.BstatementUnumber}"/></td>
-    </tr>
-   </table>
-   <input type="submit" value="提交">
-   </form>
+       <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
+		  <img src="source/image/homepage_bg.jpg" height="100%" width="100%"/>
+  	   </div>
+  	   <div class="topbar">
+  	  	  <div class="title">
+  	  		  <img alt="" src="source/image/homepage_title.png">
+  	  	  </div>
+      	  <div class="topbody">
+      		  <div class="info">
+      			    你好！
+      			  <s:property value="ruser.userName"/>
+      			  <a href="rebackhome.action?userId=<s:property value="ruser.userId"/>" style="text-decoration:none;">[返回首页]</a>
+      		      <a href="login.jsp" style="text-decoration:none;">[退出登录]</a>
+      		  </div>
+      	  </div>
+  	    </div>
+		<div class="panel" style="width:95%;height:92%;margin-left:2.5%">
+			<div class="easyui-tabs" style="width:100%;height:100%;">
+				<div title="资产负债表" style="padding-top:1%;width:100%;" class="tabs">
+					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%;display:inline-block">
+						<div class="search" style="display:inline-block;">
+							<form action="statementQueryb" >
+								<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="month" name="fsdate" class="date"/>
+    							<input type="submit" value="查询资产负载表" class="Button" >
+    						</form>
+    					</div>
+    					<div class="add" style="display:inline-block;">
+    						<form action="fstatementJmpBs">
+    							<div style="width:10%;height:0;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="submit" value="新增资产负债表" class="Button">
+    						</form>
+    					</div>
+    				</div>
+    				<div class="table_panel">
+						<form action="bstatementUpdate">
+   							<s:hidden name="userId" value="%{ruser.userId}"/></span>
+   							<s:hidden name="bstatement.BstatementId" value="%{bstatement.BstatementId}"/></span>
+   							<s:hidden name="bstatement.BstatementMonth" value="%{bstatement.BstatementMonth}"/></span>
+   							<table cellpadding=0 cellspacing=0 style='border-collapse:collapse;table-layout:fixed;' class="s1">
+   								<tr>
+   									<td width="150px" colspan="6">资产负债表</td>
+   								</tr>
+    							<tr>
+     								<td width="150px">报表编制日期：</td>
+     								<td><s:property value="%{bstatement.BstatementMonth}"/></td>
+     								<td colspan="3"></td>
+     								<td>金额单位：￥</td>
+    							</tr>
+    							<tr>
+    								<td width="150px">资产</td>
+    								<td width="150px">年初余额</td>
+    								<td width="150px">月末余额</td>
+    								<td width="150px">负债和所有者权益</td>
+    								<td width="150px">年初余额</td>
+    								<td width="150px">月末余额</td>
+    							</tr>
+    							<tr>
+    								<td width="150px" style="text-align:left">流动资产:</td>
+    								<td width="150px"></td>
+    								<td width="150px"></td>
+    								<td width="150px" style="text-align:left">流动负债:</td>
+    								<td width="150px"></td>
+    								<td width="150px"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px">货币资金</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bcurrent1" value="<s:property value='%{bstatement.Bcurrent1}'/>"></td>
+     								<td width="150px">短期负债</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bliabilities1" value="<s:property value='%{bstatement.Bliabilities1}'/>"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px">应收帐款</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bcurrent2" value="<s:property value='%{bstatement.Bcurrent2}'/>"></td>
+     								<td width="150px">应付帐款</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bliabilities2" value="<s:property value='%{bstatement.Bliabilities2}'/>"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px">存货</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bcurrent3" value="<s:property value='%{bstatement.Bcurrent3}'/>"></td>
+     								<td width="150px">应交税金</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bliabilities3" value="<s:property value='%{bstatement.Bliabilities3}'/>"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px" style="text-align:left">流动资产合计：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+     								<td width="150px" style="text-align:left">流动负债合计：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px" style="text-align:left">固定资产：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+     								<td width="150px" style="text-align:left">所有者权益：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px">固定资产原产值</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bfixed1" value="<s:property value='%{bstatement.Bfixed1}'/>"></td>
+     								<td width="150px">实收资本</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bsurplus1" value="<s:property value='%{bstatement.Bsurplus1}'/>"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px">累计折旧</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bfixed2" value="<s:property value='%{bstatement.Bfixed2}'/>"></td>
+     								<td width="150px">盈余公积</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bsurplus2" value="<s:property value='%{bstatement.Bsurplus2}'/>"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px">固定资产净产值</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bfixed3" value="<s:property value='%{bstatement.Bfixed3}'/>"></td>
+     								<td width="150px">未分配利润</td>
+     								<td width="150px"></td>
+     								<td width="150px"><input type="text" name="bstatement.Bsurplus3" value="<s:property value='%{bstatement.Bsurplus3}'/>"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px" style="text-align:left">固定资产合计：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+     								<td width="150px" style="text-align:left">所有者权益合计：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px" style="text-align:left">资产合计：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+     								<td width="150px" style="text-align:left">负债及所有者权益：</td>
+     								<td width="150px"></td>
+     								<td width="150px"></td>
+    							</tr>
+    							<tr>
+     								<td width="150px">编制人:</td>
+     								<td width="150px" colspan="5" style="text-align:left;"><input type="text" name="bstatement.BstatementUnumber" value="<s:property value='%{bstatement.BstatementUnumber}'/>"></td>
+    							</tr>
+   							</table>
+   							<input type="submit" value="提交" id="iw">
+   						</form>
+					</div>
+				</div>
+				<div title="利润表" style="padding-top:1%;width:100%;" class="tabs">
+					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
+						<div class="search" style="display:inline-block;">
+							<form action="statementQueryp" class="search">
+    							<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="month" name="fsdate" class="date"/>
+    							<input type="submit" value="查询利润表" class="Button">
+    						</form>
+    					</div>
+    					<div class="add" style="display:inline-block;">
+    						<form action="fstatementJmpPs" class="add">
+    							<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="submit" value="新增利润表" class="Button">
+    						</form>
+    					</div>
+    				</div>
+				</div>
+				<div title="现金流量表" style="padding-top:1%;width:100%;" class="tabs">
+					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
+						<div class="search" style="display:inline-block;">
+							<form action="statementQueryc" class="search">
+    							<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="month" name="fsdate" class="date"/>
+    							<input type="submit" value="查询现金流量表" class="Button">
+    						</form>
+    					</div>
+    					<div class="add" style="display:inline-block;">
+    						<form action="fstatementJmpCs" class="add">
+    							<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="submit" value="新增现金流量表" class="Button">
+    						</form>
+    					</div>
+    				</div>
+				</div>
+			</div>
+		</div>
   </body>
 </html>
-
