@@ -34,6 +34,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			paddind-left:2px;
 		}
 	</style>
+    <script language="javascript">
+		function bigimg(i)
+		{
+			var zoom = parseInt(i.style.zoom,10)||100;
+			zoom += event.wheelDelta / 12;
+			if(zoom > 0 )
+			i.style.zoom=zoom+'%';
+			return false;
+		}
+     </script>
   </head>
   
   <body>
@@ -73,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				</div>
     				<div class="table_panel">
    							<s:hidden name="userId" value="%{ruser.userId}"/></span>
-   							<table cellpadding=0 cellspacing=0 style='border-collapse:collapse;table-layout:fixed;' class="s1">
+   							<table onmousewheel="return bigimg(this)" cellpadding=0 cellspacing=0 style='border-collapse:collapse;table-layout:fixed;' class="s1">
    								<tr>
    									<td width="150px" colspan="6">资产负债表</td>
    								</tr>

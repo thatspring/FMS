@@ -87,7 +87,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;opacity: 1;">
 		<img src="source/image/login_bg.jpg" height="100%" width="100%"/>
    </div>
-   <div id="info_head"><h2 style="color:#000000">注册</h2></div>
+   <div id="info_head"><h2 style="color:#ffffff">注册</h2></div>
    <div id="info_z"><hr style="height:3px;border:none;border-top:3px double #95B8E7;" /></div>
    <div id="info_panel">
      <form action="userRegister">      

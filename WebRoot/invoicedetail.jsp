@@ -90,6 +90,17 @@ html,body{
  			border-bottom:1px solid #FF0000;
 		}
 	</style>
+    <script language="javascript">
+		function bigimg(i)
+		{
+			var zoom = parseInt(i.style.zoom,10)||100;
+			zoom += event.wheelDelta / 12;
+			if(zoom > 0 )
+			i.style.zoom=zoom+'%';
+			return false;
+		}
+     </script>
+
   </head>
   
   <body>
@@ -124,7 +135,7 @@ html,body{
     		</form>
     	</div>
     	<div class="invoice_panel">
-    			<div class="invoice">
+    			<div class="invoice" onmousewheel="return bigimg(this)">
    					<h1>发票</h1>
    					<table cellpadding=0 cellspacing=0 style='border-collapse:collapse;table-layout:fixed;'>
     					<tr>

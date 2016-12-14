@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'error.jsp' starting page</title>
+    <title>错误页面</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,11 +19,59 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<style type="text/css">
+		.error{
+			width:100%;
+			text-align:center;
+		}
+		.error .img{
+			display:block;
+			margin-left:auto;
+			margin-right:auto;
+			width:25%;
+			margin-top:100px;
+			border-bottom:3px solid #FFFF00;
+			padding-bottom:10px;
+		}
+		.img img{
+			display:block;
+		}
+		input{
+			display:block;
+			width:150px;
+			height:45px;
+			font-size:25px;
+			font-weight:bold;
+			border:1px solid #ffffff;
+			background-color:#0099FF;
+			border-radius:2px;
+			cursor: pointer;
+			color:#FFFF00;
+			margin-left:auto;
+			margin-right:auto;
+			margin-top:50px;
+		}
+		input:hover{
+			color:#0033FF;
+			background-color:#ffffff;
+			border:1px solid #0033FF;
+		}
+	</style>
   </head>
   
-  <body>
-     <h3>Sorry! 这儿发生了一个错误。</h3>
-     <a href="index.jsp">返回</a>
+  <body bgcolor="#F0F0F0">
+  <!--
+  	 <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
+		<img src="source/image/homepage_bg.jpg" height="100%" width="100%"/>
+  	 </div>
+  -->
+     <div class="error">
+     	<div class="img">
+     		<img src="source/image/error.png"/>
+     		<img src="source/image/error1.png"/>
+     	</div>
+     	<input type="button" id="Button" value="返回主界面"
+			onclick="location.href='index.jsp'">
+     </div>
   </body>
-</html>
+<ml>

@@ -45,18 +45,23 @@ public class BstatementAction {
 	public String QueryBstatement() throws Exception{
         UserOperateDB auod = new UserOperateDB();
 	    ruser = auod.QueryUserP(userId);
-	    StatementOperateDB sod=new StatementOperateDB();
-	    bstatement=sod.QueryBstatementByDate(fsdate);
-	    ybstatement=sod.QueryBstatementByYear(fsdate.substring(0,4));
-		if(bstatement!=null){
-			if(bstatement.getBcurrent1()!=null){
-			    CalculateA(bstatement);
-			    CalculateA(ybstatement);
-			}
-			return "psuccess";
-		}else{
-			return "error";
-		}
+	    if(fsdate.length()==0){
+	    	return "psuccess";
+	    }
+	    else{
+	    	StatementOperateDB sod=new StatementOperateDB();
+	    	bstatement=sod.QueryBstatementByDate(fsdate);
+	    	ybstatement=sod.QueryBstatementByYear(fsdate.substring(0,4));
+	    	if(bstatement!=null){
+	    		if(bstatement.getBcurrent1()!=null){
+	    			CalculateA(bstatement);
+	    			CalculateA(ybstatement);
+	    		}
+	    		return "psuccess";
+	    	}else{
+	    		return "error";
+	    	}
+	    }
 	}
 	
 	public String UpdateBstatement() throws Exception{
