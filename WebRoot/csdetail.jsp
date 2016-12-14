@@ -37,6 +37,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</style>
   </head>
   
+  <script language="javascript">
+		function bigimg(i)
+		{
+			var zoom = parseInt(i.style.zoom,10)||100;
+			zoom += event.wheelDelta / 12;
+			if(zoom > 0 )
+			i.style.zoom=zoom+'%';
+			return false;
+		}
+  </script>
+  
   <body>
    	   <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
 		  <img src="source/image/homepage_bg.jpg" height="100%" width="100%"/>
@@ -75,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     				</div>
     				<div class="table_panel">
    							<s:hidden name="userId" value="%{ruser.userId}"/></span>
-   							<table cellpadding=0 cellspacing=0 style='border-collapse:collapse;table-layout:fixed;' class="s1">
+   							<table onmousewheel="return bigimg(this)" cellpadding=0 cellspacing=0 style='border-collapse:collapse;table-layout:fixed;' class="s1">
    								<tr>
    									<td width="450px" colspan="2">现金流量表</td>
    								</tr>
