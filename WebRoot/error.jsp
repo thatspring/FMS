@@ -57,7 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</style>
   </head>
   
-  <body bgcolor="#33CCFF">
+  <body bgcolor="#F0F0F0">
   <!--
   	 <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
 		<img src="source/image/homepage_bg.jpg" height="100%" width="100%"/>
