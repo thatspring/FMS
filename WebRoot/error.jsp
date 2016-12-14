@@ -24,10 +24,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			width:26%;
 			height:20%;
 			padding-top:5%;
-			background-color:#ffffff;
-			border:1px solid #000000;
 			text-align:center;
-			border-radius:5px;
 		}
 		input{
 			width:50px;
