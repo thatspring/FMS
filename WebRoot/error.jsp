@@ -22,7 +22,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<style type="text/css">
 		.error{
 			width:100%;
+<<<<<<< HEAD
 			height:100%;
+=======
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
 			text-align:center;
 		}
 		.error .img{
@@ -30,7 +33,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			margin-left:auto;
 			margin-right:auto;
 			width:25%;
+<<<<<<< HEAD
 			margin-top:300px;
+=======
+			margin-top:100px;
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
 			border-bottom:3px solid #FFFF00;
 			padding-bottom:10px;
 		}
@@ -75,4 +82,4 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			onclick="location.href='index.jsp'">
      </div>
   </body>
-</html>
+<ml>

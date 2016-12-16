@@ -41,17 +41,22 @@ public class PstatementAction {
 	public String QueryPstatement() throws Exception{
         UserOperateDB auod = new UserOperateDB();
 	    ruser = auod.QueryUserP(userId);
-	    StatementOperateDB sod=new StatementOperateDB();
-	    pstatement=sod.QueryPstatementByDate(fsdate);
-	    ypstatement=sod.QueryPstatementByYear(fsdate.substring(0,4));
-		if(pstatement!=null){
-			if(pstatement.getPincome1()!=null){
-			    Calculateprofit();
-			}
-			return "psuccess";
-		}else{
-			return "error";
-		}
+	    if(fsdate.length()==0){
+	    	return "psuccess";
+	    }
+	    else{
+	    	StatementOperateDB sod=new StatementOperateDB();
+	    	pstatement=sod.QueryPstatementByDate(fsdate);
+	    	ypstatement=sod.QueryPstatementByYear(fsdate.substring(0,4));
+	    	if(pstatement!=null){
+	    		if(pstatement.getPincome1()!=null){
+	    			Calculateprofit();
+	    		}
+	    		return "psuccess";
+	    	}else{
+	    		return "error";
+	    	}
+	    }
 	}
 	
 	public String UpdatePstatement() throws Exception{

@@ -81,7 +81,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      <div class="l_form">
      <div class="split"></div>
      <div class="login_form">
-     <h2 style="color:#ffffff">登陆</h2><br/>
+     <h2 style="color:#000000">登陆</h2><br/>
      <form action="userLogin"> 
     	<div class="easyui-panel" style="width:400px;padding:50px 60px;">
     		<span>用户名：</span>

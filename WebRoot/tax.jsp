@@ -3,7 +3,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
   <head profile="http://gmpg.org/xfn/11">
-    <title>财务管理系统</title>
+    <title>税率计算</title>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <script src="js/jquery-3.1.1.min.js"></script>
 		<script src="js/Highcharts-5.0.6/code/highcharts.js"></script>
@@ -72,14 +72,139 @@ $(document).ready(function() {
 	});
 });
 </script>
+<link type="text/css" rel="stylesheet" href="header.css"/> 
+<style>
+html,body{
+	margin:0px;
+	height:100%;
+}
+#info_panel{
+	background-color:white;
+	border: 1px solid #000000;
+	border-radius: 5px;
+	width:95%;
+	margin:auto;
+	height:92%;
+}
+#info_panel #ibo{ 
+    margin-top:3%;
+	background-color:#FFFFFF;	
+}
+#info_panel #ibo #head{
+	margin-left:3%;
+	margin-top:2%;
+}
+#info_panel #ibo #head1{
+	margin-top:1%;
+}
+#info_panel #ibo #b1{
+	margin-left:2%;
+	margin-top:2%;
+}
+#info_panel #ibo #b2{
+	margin-left:5%;
+	margin-top:8%;
+}
+table.imagetable {
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+}
+table.imagetable th {
+	background:#b5cfd2 url('source/image/tax_1_blue.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+	font-size:16px;
+}
+table.imagetable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+	font-size:20px;
+	font-color:#000000;
+}
+table.imagetable td select{
+	border-radius: 5px;
+	font-size:18px;
+}
+table.imagetable td input.ti{
+	border-radius: 5px;
+	font-size:18px;
+}
+table.imagetable td input.td{
+	border-radius: 5px;
+	font-size:16px;
+}
+table.imagetable td input.tb{
+	background-color: white;
+	border: 1px solid #000100;
+	border-radius: 5px;
+	color: #000000;
+	font-size:20px;
+}
+table.imagetable td input.tb:hover{
+	background-color: #000100;
+	color: white;
+}
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+</style>
   </head>
   <body>
-    <h3>你好！<s:property value="ruser.userName"/></h3>
-     <div>
-      <p>如果选择其它税种计算税率，请在计算公式一栏输入“金额*{税率}”!(例如：金额*15%)</p>
-      <table>
+    <div id="bg" style="position:absolute;left:0;top:0;width:100%; height:100%; z-index:-1;">
+		<img src="source/image/homepage_bg.jpg" height="100%" width="100%"/>
+    </div>
+    <div class="topbar">
+  	 <div class="title">
+  	  <img alt="" src="source/image/homepage_title.png">
+  	 </div>
+     <div class="topbody">
+      <div class="info">
+                     你好！
+       <s:property value="ruser.userName"/>
+       <a href="rebackhome.action?userId=<s:property value="ruser.userId"/>" style="text-decoration:none;">[返回首页]</a>
+       <a href="login.jsp" style="text-decoration:none;">[退出登录]</a>
+      </div>
+     </div>
+    </div>
+    <div id="info_panel">
+     <div id="ibo">
+      <div id="head"><h2 style="color:#000000">如果选择其它税种计算税率，请在计算公式一栏输入“金额*{税率}”!(例如：金额*15%)</h2></div>
+      <div id="head1"><hr style="height:3px;border:none;border-top:3px double #95B8E7;" /></div>
+      <div id="b1">
+      <table class="imagetable">
        <tr>
-        <th>税种</th><th>计算公式</th><th>金额</th><th>应交金额</th><th>操作</th><th>日期</th><th>添加</th>
+        <th>税种</th>
+        <th>计算公式</th>
+        <th>金额</th>
+        <th style="width:180px">应交金额</th>
+        <th>操作</th>
+        <th>日期</th>
+        <th style="width:90px">添加</th>
        </tr>
        <tr>
         <td>
@@ -93,35 +218,38 @@ $(document).ready(function() {
          </select>
         </td>
         <td><div id="rtaxText"></div> </td>
-        <td><input type="text" id="moneyTax"></td>
+        <td><input type="text" id="moneyTax" class="ti"/></td>
         <td><div id="rtaxMoneyText"></td>
-        <td><input type="button" id="btnAjax" value="查询" /></td>
-        <td><input type="date" id="userdate"/></td>
-        <td><input type="button" id="atnAjax" value="添加到账目" /></td>
+        <td><input type="button" id="btnAjax" value="查询" class="tb"/></td>
+        <td><input type="date" id="userdate" class="td"/></td>
+        <td><input type="button" id="atnAjax" value="添加到账目" class="tb" /></td>
        </tr>
        <tr>
         <td>其他税种</td> 
-        <td><input type="text" id="tax_cf"></td>
-        <td><input type="text" id="moneyTax1"></td>
+        <td><input type="text" id="tax_cf" class="ti"/></td>
+        <td><input type="text" id="moneyTax1" class="ti"/></td>
         <td><div id="rtaxMoneyText1"></td>
-        <td><input type="button" id="stnAjax" value="查询" /></td>
-        <td><input type="date" id="userdate1"/></td>
-        <td><input type="button" id="ctnAjax" value="添加到账目" /></td>
+        <td><input type="button" id="stnAjax" value="查询" class="tb"/></td>
+        <td><input type="date" id="userdate1" class="td" /></td>
+        <td><input type="button" id="ctnAjax" value="添加到账目" class="tb"/></td>
        </tr>
       </table>
      </div>
-     <a href="rebackhome.action?userId=<s:property value="ruser.userId"/>">返回</a>
-     <p>注：添加到账目时：</p> 
-     <table>
-      <tr>
-       <th>项目</th><th>税种</th>
-      </tr>
-      <tr><td>增值税：</td><td>:Tax#01</td>
-      <tr><td>所得税：</td><td>:Tax#02</td></tr>
-      <tr><td>营业税：</td><td>:Tax#03</td></tr>
-      <tr><td>消费税：</td><td>:Tax#04</td></tr>
-      <tr><td>城建税：</td><td>:Tax#05</td></tr>
-      <tr><td>其他税：</td><td>:Tax#06</td></tr>
-     </table>
+     <div id="b2">
+      <h4>注：添加到账目时：</h4>
+      <table class="gridtable">
+       <tr>
+        <th>项目</th><th>税种</th>
+       </tr>
+       <tr><td>增值税</td><td>Tax#01</td>
+       <tr><td>所得税</td><td>Tax#02</td></tr>
+       <tr><td>营业税</td><td>Tax#03</td></tr>
+       <tr><td>消费税</td><td>Tax#04</td></tr>
+       <tr><td>城建税</td><td>Tax#05</td></tr>
+       <tr><td>其他税</td><td>Tax#06</td></tr>
+      </table>
+     </div>
+     </div>
+    </div>
   </body>
 </html>

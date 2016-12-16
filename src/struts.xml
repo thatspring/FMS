@@ -97,6 +97,11 @@
     <result name="error">/error.jsp</result>
   </action>
   
+  <action name="invoicePrint" class="com.fms.Invoice.InvoiceAction" method="QueryInvoiceById">
+    <result name="success">/invoiceprint.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
   <action name="invoiceUdetail" class="com.fms.Invoice.InvoiceAction" method="GetUserIByUserNumber">
     <result name="success">/uinformation.jsp</result>
     <result name="error">/error.jsp</result>
@@ -139,6 +144,11 @@
     <result name="error">/error.jsp</result>
   </action>
   
+  <action name="statementPrintb" class="com.fms.Statement.BstatementAction" method="QueryBstatement">
+    <result name="psuccess">/bsprint.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
   <action name="bstatementUdetail" class="com.fms.Statement.BstatementAction" method="GetUserIByUserNumber">
     <result name="success">/uinformation.jsp</result>
     <result name="error">/error.jsp</result>
@@ -174,6 +184,11 @@
     <result name="error">/error.jsp</result>
   </action>
   
+  <action name="statementPrintp" class="com.fms.Statement.PstatementAction" method="QueryPstatement">
+    <result name="psuccess">/psprint.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
   <action name="pstatementUdetail" class="com.fms.Statement.PstatementAction" method="GetUserIByUserNumber">
     <result name="success">/uinformation.jsp</result>
     <result name="error">/error.jsp</result>
@@ -206,6 +221,11 @@
 
   <action name="statementQueryc" class="com.fms.Statement.CstatementAction" method="QueryCstatement">
     <result name="psuccess">/csdetail.jsp</result>
+    <result name="error">/error.jsp</result>
+  </action>
+  
+  <action name="statementPrintc" class="com.fms.Statement.CstatementAction" method="QueryCstatement">
+    <result name="psuccess">/csprint.jsp</result>
     <result name="error">/error.jsp</result>
   </action>
 

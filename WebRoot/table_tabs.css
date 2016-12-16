@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @CHARSET "UTF-8";
 
 .easyui-tabs .date{
@@ -34,3 +35,84 @@ td{
  			height:48px;
 }
 
+=======
+@CHARSET "UTF-8";
+
+.easyui-tabs .date{
+			
+	border:1px solid #33CCCC;
+}
+.easyui-tabs .Button{
+	border-radius:3px;
+	border:1px solid #33CCCC;
+	height:23px;
+	background-color:	#F0FFFF;
+}
+.table_panel{
+	 width:100%;
+	 height:92%;
+	 background-color:#FFFFFF;
+}
+
+table.s1{
+ 			border-top:1px solid #333333;
+ 			border-left:1px solid #333333;
+ 			border-right:none;
+ 			border-bottom:none;
+ 			margin-top:20px;
+ 			margin-left:12%;
+}
+td{
+			border-top:nooe;
+ 			border-left:none;
+ 			border-right:1px solid #333333;
+ 			border-bottom:1px solid #333333;
+ 			text-align:center;
+ 			height:48px;
+}
+
+td input{
+	height:44px;
+	width:146px;
+	border: 1px solid #000000;
+	font-size:16px;
+}
+#iw{
+	width:100px;
+	height:30px;
+	margin-top:10px;
+	margin-left:45%;
+	margin-bottom:10px;
+}
+#ib1{
+	display:inline-block;
+	width:100px;
+	height:30px;
+	margin-top:10px;
+	margin-left:16%;
+	margin-bottom:10px;
+}
+#ib2{
+	display:inline-block;
+	width:100px;
+	height:30px;
+	margin-top:10px;
+	margin-left:20%;
+	margin-bottom:10px;
+}
+#ib3{
+	display:inline-block;
+	width:100px;
+	height:30px;
+	margin-top:10px;
+	margin-left:20%;
+	margin-bottom:10px;
+}
+table.s0{
+	border-top:1px solid #333333;
+ 	border-left:1px solid #333333;
+ 	border-right:none;
+ 	border-bottom:none;
+ 	width:24cm;
+}
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97

@@ -10,11 +10,16 @@ public class UserAction {
     
 	public String LoginUser() throws Exception{
 		UserOperateDB uod=new UserOperateDB();
-		ruser = uod.CheckUser(user);
-		if(ruser.getUserPass().equals(user.getUserPass())){
-			return "success";
-		}else{
+		if(user.getUserName().length()==0){
 			return "error";
+		}
+		else{
+			ruser = uod.CheckUser(user);
+			if(ruser.getUserPass().equals(user.getUserPass())){
+				return "success";
+			}else{
+				return "error";
+			}
 		}
 	}
 

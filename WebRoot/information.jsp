@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>个人信息</title>
+    <title>个人中心</title>
     <!--  
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -26,7 +26,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		#info_panel{
 			width:95%;
 			margin:0px auto;
+<<<<<<< HEAD
 			height:93%;
+=======
+			height:92%;
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
 		}
 		
 		#info_panel #choice_card{ 
@@ -108,12 +112,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     		width:20%;
     		height:4%;
     		padding-top:1.5%;
+<<<<<<< HEAD
     		background-color:#FFFFFF;
+=======
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
     	}
     	#info_panel #right_panel #content #label input{
     		font-size:22px;
     		border:0px;
+<<<<<<< HEAD
     		background-color:#FFFFFF;
+=======
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
     	}
     	#info_panel #right_panel #content #s_con{
     		border:2px solid #E6E6FA;
@@ -137,8 +147,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	  </div>
       <div class="topbody">
       	<div class="info">
-      		<a href="login.jsp" style="text-decoration:none;">[退出登录]</a>
       		<a href="rebackhome.action?userId=<s:property value="ruser.userId"/>" style="text-decoration:none;">[返回首页]</a>
+      		<a href="login.jsp" style="text-decoration:none;">[退出登录]</a>
       	</div>
       </div>
   </div>
@@ -151,7 +161,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div id="info">
   				<input value="个人信息" disabled="disabled"><br/>
   			</div>
+<<<<<<< HEAD
   			
+=======
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
   			<div id="other">
   			<input type="button" id="Button" value="修改信息" 
   				onclick="location.href='userEditI.action?userId=<s:property value="ruser.userId"/>'"><br/>
@@ -165,6 +178,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<h3>个人详细信息</h3><br>
 		</div>
 		<div id="content">
+<<<<<<< HEAD
 		<div id="label"><input value="用户ID" disabled="disabled"></div>
     	<div id="s_con"><s:property value="ruser.userNumber"/></div>
     	<div id="label"><input value="真实姓名" disabled="disabled"></div>
@@ -178,6 +192,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	<div id="label"><input value="手机号码" disabled="disabled"></div>
     	<div id="s_con"><s:property value="ruser.userIphone"/></div>
     	<div id="label"><input value="电子邮箱" disabled="disabled"></div>
+=======
+		<div id="label"><input value="用户ID" readonly="true"></div>
+    	<div id="s_con"><s:property value="ruser.userNumber"/></div>
+    	<div id="label"><input value="真实姓名" readonly="true"></div>
+    	<div id="s_con"><s:property value="ruser.userTruename"/></div>
+    	<div id="label"><input value="所在部门" readonly="true"></div>
+    	<div id="s_con"><s:property value="ruser.userDepartment"/></div>
+    	<div id="label"><input value="现任职务" readonly="true"></div>
+    	<div id="s_con"><s:property value="ruser.userPost"/></div>
+    	<div id="label"><input value="办公电话" readonly="true"></div>
+    	<div id="s_con"><s:property value="ruser.userPhone"/></div>
+    	<div id="label"><input value="手机号码" readonly="true"></div>
+    	<div id="s_con"><s:property value="ruser.userIphone"/></div>
+    	<div id="label"><input value="电子邮箱" readonly="true"></div>
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
     	<div id="s_con"><s:property value="ruser.userEmail"/></div>
     	</div>
     	<!-- 

@@ -9,7 +9,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
+<<<<<<< HEAD
     <title>My JSP 'pstatement.jsp' starting page</title>
+=======
+    <title>利润表</title>
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -35,6 +39,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			width:300px;
 		}
 	</style>
+<<<<<<< HEAD
+=======
+    <script language="javascript">
+		function bigimg(i)
+		{
+			var zoom = parseInt(i.style.zoom,10)||100;
+			zoom += event.wheelDelta / 12;
+			if(zoom > 0 )
+			i.style.zoom=zoom+'%';
+			return false;
+		}
+     </script>
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
   </head>
   
   <script language="javascript">
@@ -60,6 +77,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       		  <div class="info">
       			    你好！
       			  <s:property value="ruser.userName"/>
+<<<<<<< HEAD
       			  <a href="login.jsp" style="text-decoration:none;">[退出登录]</a>
       			  <a href="rebackhome.action?userId=<s:property value="ruser.userId"/>" style="text-decoration:none;">[返回首页]</a>
       		  </div>
@@ -71,13 +89,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div title="利润表" style="padding-top:1%;width:100%;" class="tabs">
 					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
 						<div class="search" style="width:17%; float:left;">
+=======
+      			  <a href="rebackhome.action?userId=<s:property value="ruser.userId"/>" style="text-decoration:none;">[返回首页]</a>
+      		      <a href="login.jsp" style="text-decoration:none;">[退出登录]</a>
+      		  </div>
+      	  </div>
+  	    </div>
+  	    <div class="panel" style="width:95%;height:92%;margin-left:2.5%">
+			<div class="easyui-tabs" style="width:100%;height:100%;">
+				<div title="利润表" style="padding-top:1%;width:100%;" class="tabs">
+					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
+						<div class="search" style="display:inline-block;">
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
 							<form action="statementQueryp" class="search">
     							<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
     							<input type="month" name="fsdate" class="date"/>
     							<input type="submit" value="查询利润表" class="Button">
     						</form>
     					</div>
+<<<<<<< HEAD
     					<div class="add" style="width:83%; float:right;">
+=======
+    					<div class="add" style="display:inline-block;">
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
     						<form action="fstatementJmpPs" class="add">
     							<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
     							<input type="submit" value="新增利润表" class="Button">
@@ -91,6 +125,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    									<td width="300px" colspan="3">利润表</td>
    								</tr>
     							<tr>
+<<<<<<< HEAD
      								<td width="300px" colspan="3" >时间：
      									<s:property value="pstatement.PstatementDate"></s:property>
      									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -101,6 +136,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
      									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
      									金额单位：￥</td>
+=======
+     								<td width="300px">时间：</td>
+     								<td><s:property value="pstatement.PstatementDate"></s:property></td>
+     							    <td>金额单位：￥</td>
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
     							</tr>
     							<tr>
     								<td width="300px">项目</td>
@@ -180,6 +220,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     							</tr>
     							<tr>
      								<td width="150px">编制人:</td>
+<<<<<<< HEAD
      								<td width="150px" colspan="5" style="text-align:left;"><a href="pstatementUdetail.action?pstatement.PstatementDate=<s:property value="pstatement.PstatementDate"/>
      									&userId=<s:property value="ruser.userId"/>">
      									<s:property value="pstatement.PstatementUnumber"></s:property></a></td>
@@ -206,10 +247,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     						<form action="fstatementJmpBs">
     							<div style="width:10%;height:0;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
     							<input type="submit" value="新增资产负债表" class="Button">
+=======
+     								<td width="150px"><a href="pstatementUdetail.action?pstatement.PstatementDate=<s:property value="pstatement.PstatementDate"/>
+     									&userId=<s:property value="ruser.userId"/>">
+     									<s:property value="pstatement.PstatementUnumber"></s:property></a></td>
+     								<td></td>
+    							</tr>
+   							</table>
+   						<a href="pstatementUpJPs.action?fsdate=<s:property value="pstatement.PstatementDate"/>
+     						&userId=<s:property value="ruser.userId"/>"><input type="button" value="编辑" id="ib1"></a>
+   						<a href="pstatementDelete.action?fsdate=<s:property value="pstatement.PstatementDate"/>
+   							&PstatementId=<s:property value="pstatement.PstatementId"/>
+   							&userId=<s:property value="ruser.userId"/>"><input type="button" value="删除" id="ib2"></a>
+					   	<a href="statementPrintp.action?fsdate=<s:property value="pstatement.PstatementDate"/>
+   							&userId=<s:property value="ruser.userId"/>"><input type="button" value="预览" id="ib3"></a>
+					</div>
+				</div>
+				<div title="现金流量表" style="padding-top:1%;width:100%;" class="tabs">
+					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
+						<div class="search" style="display:inline-block;">
+							<form action="statementQueryc" class="search">
+    							<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="month" name="fsdate" class="date"/>
+    							<input type="submit" value="查询现金流量表" class="Button">
+    						</form>
+    					</div>
+    					<div class="add" style="display:inline-block;">
+    						<form action="fstatementJmpCs" class="add">
+    							<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="submit" value="新增现金流量表" class="Button">
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
     						</form>
     					</div>
     				</div>
 				</div>
+<<<<<<< HEAD
 				<div title="现金流量表" style="padding-top:1%;width:100%;" class="tabs">
 					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
 						<div class="search" style="width:18%; float:left;">
@@ -223,6 +295,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     						<form action="fstatementJmpCs" class="add">
     							<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
     							<input type="submit" value="新增现金流量表" class="Button">
+=======
+				<div title="资产负债表" style="padding-top:1%;width:100%;" class="tabs">
+					<div style="border-bottom:2px solid #66CCFF;width:100%;height:4%">
+						<div class="search" style="display:inline-block;">
+							<form action="statementQueryb" >
+								<div style="width:10%;height:0px;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="month" name="fsdate" class="date"/>
+    							<input type="submit" value="查询资产负载表" class="Button" >
+    						</form>
+    					</div>
+    					<div class="add" style="display:inline-block;">
+    						<form action="fstatementJmpBs">
+    							<div style="width:10%;height:0;"><s:hidden name="userId" value="%{ruser.userId}"/></div>
+    							<input type="submit" value="新增资产负债表" class="Button">
+>>>>>>> b84f6f3330687d26a2c96acad97c13282dfdfb97
     						</form>
     					</div>
     				</div>
